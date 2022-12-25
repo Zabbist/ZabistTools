@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Text Replacer</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Text Replacer</h1>
+  <form>
+    <label for="input-text">Paste Text:</label><br>
+    <textarea id="input-text"></textarea>
+    <br>
+    <label for="search-word">Search Word:</label><br>
+    <input type="text" id="search-word"><br>
+    <label for="replacement-word">Replacement Word:</label><br>
+    <input type="text" id="replacement-word"><br>
+    <br>
+    <button type="button" id="replace-button">Replace</button>
+    <button type="button" id="copy-button">Copy</button>
+  </form> 
+  <script>
+    // Get references to the elements on the page
+    const inputText = document.getElementById('input-text');
+    const searchWord = document.getElementById('search-word');
+    const replacementWord = document.getElementById('replacement-word');
+    const replaceButton = document.getElementById('replace-button');
+    const copyButton = document.getElementById('copy-button');
+
+    // Add event listeners to the buttons
+    replaceButton.addEventListener('click', replaceWords);
+    copyButton.addEventListener('click', copyText);
+
+    function replaceWords() {
+      // Get the search and replacement words from the input boxes
+      const search = searchWord.value;
+      const replacement = replacementWord.value;
+
+      // Replace the words in the text
+      const newText = inputText.value.replace(new RegExp(search, 'g'), replacement);
+
+      // Update the text area with the new text
+      inputText.value = newText;
+    }
+
+    function copyText() {
+      // Select the text in the text area
+      inputText.select();
+
+      // Copy the selected text to the clipboard
+      document.execCommand('copy');
+    }
+  </script>
+</body>
+</html>
