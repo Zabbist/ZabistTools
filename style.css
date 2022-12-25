@@ -12,7 +12,6 @@ nav a {
   &:hover {
     color: #357ae8;
     text-decoration: underline;
-    margin-right: 20px;
   }
 }
 
@@ -64,6 +63,7 @@ button {
   padding: 10px;
   border-radius: 3px;
   box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  margin: auto;
 }
 
 button:hover {
@@ -172,4 +172,21 @@ input[type="file"] {
 .my-element {
   margin: 10px; /* Add 10 pixels of space around the element */
 }
+
+img {
+  display: block;
+  margin: auto;  
+  width: 260px;
+  height: 260px;  
+  border: 3px solid black;
+  border-radius: 10px;  
+  box-shadow: 5px 5px 10px gray;
+}
+
+button {
+  display: block;
+  margin: auto;
+  width: 150px;
+}
+
 
