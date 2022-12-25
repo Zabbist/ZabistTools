@@ -78,3 +78,10 @@ a {
     text-decoration: underline;
   }
 }
+
+#image-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.thumbnail {
