@@ -4,20 +4,58 @@
   <meta charset="utf-8">
   <title>Image Uploader</title>
   <link rel="stylesheet" href="style.css">
-  <script src="script.js"></script>
+  
 </head>
 <body>
-  <h1>Copy to clipboard images address</h1>
-  <form id="form">
-    <label for="file-input">Select images:</label><br>
-    <input type="file" id="file-input" multiple><br>
-    <button type="button" onclick="uploadImages()">Upload Images</button>
-  </form>
-  <form>
-    <div id="image-container"></div>
-    <input type="text" id="image-addresses" readonly><br>
-    <button type="button" onclick="copyImageAddresses()">Copy Image Addresses</button><br>
-  </form>
-  <a href="index.html">Main Page</a>
+  <input type="file" id="fileInput" multiple>
+  <div class="images"></div>
+  <button type="button" onclick="copyImageAddresses()">Copy Image Addresses</button>
+  
+  <script>
+    // Get the file input element
+    const fileInput = document.querySelector('#fileInput');
+    
+    // Get the images container element
+    const imagesContainer = document.querySelector('.images');
+    
+    // Add an event listener to the file input element
+    fileInput.addEventListener('change', function() {
+      // Get the selected files
+      const files = fileInput.files;
+      
+      // Loop through the files
+      for (let i = 0; i < files.length; i++) {
+        // Create an image element
+        const img = document.createElement('img');
+        
+        // Set the src of the image element to a URL for the file
+        img.src = URL.createObjectURL(files[i]);
+        
+        // Append the image element to the images container
+        imagesContainer.appendChild(img);
+      }
+    });
+    
+    function copyImageAddresses() {
+      // Get the image elements
+      const images = document.querySelectorAll('img');
+      
+      // Get the image addresses
+      const imageAddresses = [];
+      for (let i = 0; i < images.length; i++) {
+        imageAddresses.push(images[i].src);
+      }
+      
+      // Join the image addresses with a space character
+      const imageAddressesString = imageAddresses.join(' ');
+      
+      // Write the image addresses string to the clipboard
+      navigator.clipboard.writeText(imageAddressesString).then(function() {
+        console.log('Image addresses copied to clipboard');
+      }, function(error) {
+        console.error(error);
+      });
+    }
+  </script>
 </body>
 </html>
