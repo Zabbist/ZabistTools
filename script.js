@@ -9,9 +9,11 @@ function reverseText() {
   document.getElementById("reversed-text").innerHTML = reversedText;
 }
 
-function showReversedText() {
-  // Get the reversed text from the span element
-  var reversedText = document.getElementById("reversed-text").innerHTML;
+function copyInputText() {
+  // Select the input field
+  var input = document.getElementById("text-input");
+  input.select();
 
-  // Set the reversed text as the value of the input field
-  document.getElementById("text-input").value = reversedText
+  // Copy the text from the input field
+  document.execCommand("copy");
+}
