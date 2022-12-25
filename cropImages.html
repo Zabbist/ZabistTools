@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <script src="cropImage.js"></script>
+</head>
+<body>
+  <form>
+    <input type="file" id="image-input" onchange="displayImage()">
+  </form>
+  <br>
+  <img id="image" src="" alt="...waiting for uploading image...">
+  <br>
+  <button type="button" onclick="cropAndDownload_TL(); cropAndDownload_TR(); cropAndDownload_BL(); cropAndDownload_BR()">Crop Images</button>
+  
+  <canvas id="canvas" width="300" height="200"></canvas>
+</body>
+</html>
