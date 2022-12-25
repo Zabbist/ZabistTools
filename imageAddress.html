@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Image Uploader</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js"></script>
+</head>
+<body>
+  <h1>Upload Images</h1>
+  <form id="form">
+    <label for="file-input">Select images:</label><br>
+    <input type="file" id="file-input" multiple><br>
+    <button type="button" onclick="uploadImages()">Upload Images</button>
+  </form> 
+  <div id="image-container"></div>
+  <input type="text" id="image-addresses" readonly>
+  <button type="button" onclick="copyImageAddresses()">Copy Image Addresses</button>
+  <a href="index.html">Main Page</a>
+</body>
+</html>
