@@ -1,28 +1,23 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <style>
-    img {
-      display: block;
-      margin: auto;
-    }
-  </style>
+  <meta charset="utf-8">
+  <title>My Image</title>
 </head>
 <body>
-  <img src="image.png" alt="A description of the image" id="image">
-  <br>
+  <img src="image.jpg" alt="My Image">
   <button type="button" onclick="copyImageAddress()">Copy Image Address</button>
   
   <script>
     function copyImageAddress() {
-      // Get the image element
-      const image = document.querySelector('#image');
-      
-      // Get the image address
-      const imageAddress = image.src;
-      
-      // Write the image address to the clipboard
-      navigator.clipboard.writeText(imageAddress).then(function() {
+      // Get the img element
+      const img = document.querySelector('img');
+
+      // Get the src attribute of the img element
+      const src = img.getAttribute('src');
+
+      // Write the src to the clipboard
+      navigator.clipboard.writeText(src).then(function() {
         console.log('Image address copied to clipboard');
       }, function(error) {
         console.error(error);
