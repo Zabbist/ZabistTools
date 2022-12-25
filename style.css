@@ -50,6 +50,8 @@ input[type="text"] {
   box-sizing: border-box;
   font-size: 16px;
   padding: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 button {
@@ -81,7 +83,92 @@ a {
 
 #image-container {
   display: flex;
-  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  width: 50%; /* Set the width of the container */
+  margin: auto;
+}
+
+input[type="file"] {
+  /* Hide the original file input element */
+  display: none;
+}
+
+/* Style a custom file input element */
+.custom-file-input {
+  display: inline-block;
+  padding: 0.5em 1em;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  background-color: #fff;
+  color: #333;
+  cursor: pointer;
+  font-size: 1em;
+  margin-bottom: 10px;
+}
+
+input[type="file"] {
+  /* Hide the original file input element */
+  display: inline-flex;
+  padding: 1em 1em;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  background-color: #fff;
+  color: #333;
+  cursor: pointer;
+  font-size: 1em;
+}
+
+/* Style a custom file input element */
+.custom-file-input {
+  display: inline-block;
+  padding: 0.5em 1em;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  background-color: #4285f4;
+  color: #333;
+  cursor: pointer;
+  font-size: 1em;
+}
+
+/* Style the custom file input element when it's focused */
+.custom-file-input:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #0074d9;
+}
+
+/* Style the custom file input element when it's disabled */
+.custom-file-input:disabled {
+  cursor: not-allowed;
+  color: #999;
+  background-color: #f5f5f5;
+  border-color: #ccc;
 }
 
 .thumbnail {
+  /* Set the width and height of the thumbnail */
+  width: 200px;
+  height: 200px;
+
+  /* Add a border and rounded corners */
+  border: 1px solid #ccc;
+  border-radius: 5px;
+
+  /* Add a shadow */
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+
+  /* Use object-fit to maintain the aspect ratio of the image and
+     scale it to fill the thumbnail container */
+  object-fit: cover;
+}
+
+/* Style the thumbnail when it's focused */
+.thumbnail:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #0074d9;
+}
+
+.my-element {
+  margin: 10px; /* Add 10 pixels of space around the element */
+}
+
