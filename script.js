@@ -5,8 +5,8 @@ function reverseText() {
   // Reverse the text
   var reversedText = text.split("").reverse().join("");
 
-  // Display the reversed text in the span element
-  document.getElementById("reversed-text").innerHTML = reversedText;
+  // Set the reversed text as the value of the input field
+  document.getElementById("text-input").value = reversedText;
 }
 
 function copyInputText() {
@@ -17,3 +17,4 @@ function copyInputText() {
   // Copy the text from the input field
   document.execCommand("copy");
 }
+
