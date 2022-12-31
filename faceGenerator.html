@@ -21,6 +21,9 @@
         var eyeColor = eyeColors[Math.floor(Math.random() * eyeColors.length)];
         var ethnicity = ethnicities[Math.floor(Math.random() * ethnicities.length)];
         description += "The woman has " + hairColor + " " + hairStyle + " hair and a " + faceStructure + " face. Her eyes are " + eyeColor + " and she is " + ethnicity + ".";
+        
+        // Add additional information to the end of the description
+        description += " Phototography close up portrait, black studio background, Soft light, 85-mm-lens, sharp-focus, 50-megapixels, NIKON D850, ISO 100, f/8, 1/125, 8k, sharp details, volumetric lights.";
 
         // Save the description to the clipboard
         navigator.clipboard.writeText(description);
@@ -28,3 +31,4 @@
     </script>
   </body>
 </html>
+
