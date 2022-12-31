@@ -1,0 +1,45 @@
+<html>
+  <head>
+    <title>Generate Candle</title>
+  </head>
+  <body>
+    <h1>Generate Candle</h1>
+    <select id="animal-select">
+      <option value="owl">Owl</option>
+      <option value="penguin">Penguin</option>
+      <option value="kangaroo">Kangaroo</option>
+      <option value="giraffe">Giraffe</option>
+      <option value="panda">Panda</option>
+      <option value="monkey">Monkey</option>
+      <option value="lion">Lion</option>
+      <option value="tiger">Tiger</option>
+      <option value="bear">Bear</option>
+      <option value="elephant">Elephant</option>
+      <option value="zebra">Zebra</option>
+      <option value="gazelle">Gazelle</option>
+      <option value="leopard">Leopard</option>
+      <option value="cheetah">Cheetah</option>
+      <option value="lynx">Lynx</option>
+      <option value="jaguar">Jaguar</option>
+      <option value="cougar">Cougar</option>
+      <option value="ocelot">Ocelot</option>
+      <option value="puma">Puma</option>
+      <option value="panther">Panther</option>
+    </select>
+    <button onclick="generateCandle()">Generate</button>
+
+    <script>
+      function generateCandle() {
+        // Get the selected animal from the dropdown list
+        var animalSelect = document.getElementById("animal-select");
+        var animal = animalSelect.options[animalSelect.selectedIndex].value;
+
+        // Generate a description of a candle in the shape of the selected animal
+        var description = "A dripping melted candle in the shape of a " + animal + ", glowing from the inside, mystical.";
+
+        // Save the description to the clipboard
+        navigator.clipboard.writeText(description);
+      }
+    </script>
+  </body>
+</html>
