@@ -20,7 +20,8 @@
         var faceStructure = faceStructures[Math.floor(Math.random() * faceStructures.length)];
         var eyeColor = eyeColors[Math.floor(Math.random() * eyeColors.length)];
         var ethnicity = ethnicities[Math.floor(Math.random() * ethnicities.length)];
-        description += "The woman has " + hairColor + " " + hairStyle + " hair and a " + faceStructure + " face. Her eyes are " + eyeColor + " and she is " + ethnicity + ".";
+        var age = Math.floor(Math.random() * (80 - 18 + 1)) + 18;
+        description += "A woman with " + hairColor + " " + hairStyle + " hair and a " + faceStructure + " face. She is " + age + " years old, has " + eyeColor + " eyes and is " + ethnicity + ".";
         
         // Add additional information to the end of the description
         description += " Phototography close up portrait, black studio background, Soft light, 85-mm-lens, sharp-focus, 50-megapixels, NIKON D850, ISO 100, f/8, 1/125, 8k, sharp details, volumetric lights.";
@@ -31,4 +32,5 @@
     </script>
   </body>
 </html>
+
 
