@@ -1,0 +1,30 @@
+<html>
+  <head>
+    <title>Generate Face</title>
+  </head>
+  <body>
+    <h1>Generate Face</h1>
+    <button onclick="generateFace()">Generate</button>
+
+    <script>
+      function generateFace() {
+        // Generate a random description of a woman's face
+        var description = "";
+        var hairStyles = ["curly", "straight", "wavy", "braided", "bob", "pixie"];
+        var hairColors = ["brown", "blonde", "red", "black", "gray", "silver"];
+        var faceStructures = ["oval", "round", "square", "heart-shaped", "diamond-shaped"];
+        var eyeColors = ["brown", "blue", "green", "hazel", "gray"];
+        var ethnicities = ["African", "Asian", "Caucasian", "Hispanic/Latino", "Middle Eastern", "Native American/Indigenous", "Pacific Islander"];
+        var hairStyle = hairStyles[Math.floor(Math.random() * hairStyles.length)];
+        var hairColor = hairColors[Math.floor(Math.random() * hairColors.length)];
+        var faceStructure = faceStructures[Math.floor(Math.random() * faceStructures.length)];
+        var eyeColor = eyeColors[Math.floor(Math.random() * eyeColors.length)];
+        var ethnicity = ethnicities[Math.floor(Math.random() * ethnicities.length)];
+        description += "The woman has " + hairColor + " " + hairStyle + " hair and a " + faceStructure + " face. Her eyes are " + eyeColor + " and she is " + ethnicity + ".";
+
+        // Save the description to the clipboard
+        navigator.clipboard.writeText(description);
+      }
+    </script>
+  </body>
+</html>
