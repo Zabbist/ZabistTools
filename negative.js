@@ -22,7 +22,16 @@ function removeDuplicates() {
 function saveToTXT() {
   // Get the input element and its value
   const inputElement = document.getElementById("input");
-  const inputValue = inputElement.value;
+  let inputValue = inputElement.value;
+
+  // Split the input value into an array of words or phrases
+  let inputArray = inputValue.split(",");
+
+  // Remove any leading or trailing whitespace from the array elements
+  inputArray = inputArray.map(str => str.trim());
+
+  // Join the array elements with a newline character
+  inputValue = inputArray.join("\n");
 
   // Create a Blob object with the input value as its content
   const blob = new Blob([inputValue], {
@@ -34,17 +43,8 @@ function saveToTXT() {
 
   // Set the link's download attribute to a file name and add the Blob object as its href
   a.download = "words.txt";
-  a.href = URL.createObjectURL(blob);
+  a.href
 
-  // Append the link element to the document
-  document.body.appendChild(a);
-
-  // Click the link to download the TXT file
-  a.click();
-
-  // Remove the link element from the document
-  document.body.removeChild(a);
-}
 
 
 
