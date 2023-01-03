@@ -30,35 +30,52 @@ function saveToJSON() {
   // Remove any leading or trailing whitespace from the array elements
   const cleanInputArray = inputArray.map(str => str.trim());
 
-  // Convert the array to a JSON object
-  const data = {
-    words: cleanInputArray
+  // Load the JSON file if it exists
+  let data;
+  const xhr = new XMLHttpRequest();
+  xhr.open("GET", "words.json", true);
+  xhr.responseType = "blob";
+  xhr.onload = function(e) {
+    if (this.status == 200) {
+      // Parse the file content as JSON
+      const fileContent = JSON.parse(this.response);
+
+      // Get the words array from the file content
+      const words = fileContent.words;
+
+      // Concatenate the new words to the existing words array
+      data = {
+        words: words.concat(cleanInputArray)
+      };
+
+      // Stringify the JSON object
+      const json = JSON.stringify(data);
+
+      // Create a Blob object with the JSON string as its content
+      const blob = new Blob([json], {
+        type: "application/json"
+      });
+
+      // Create a link element
+      const a = document.createElement("a");
+
+      // Set the link's download attribute to a file name and add the Blob object as its href
+      a.download = "words.json";
+      a.href = URL.createObjectURL(blob);
+
+      // Append the link element to the document
+      document.body.appendChild(a);
+
+      // Click the link to download the JSON file
+      a.click();
+
+      // Remove the link element from the document
+      document.body.removeChild(a);
+    }
   };
-
-  // Stringify the JSON object
-  const json = JSON.stringify(data);
-
-  // Create a Blob object with the JSON string as its content
-  const blob = new Blob([json], {
-    type: "application/json"
-  });
-
-  // Create a link element
-  const a = document.createElement("a");
-
-  // Set the link's download attribute to a file name and add the Blob object as its href
-  a.download = "words.json";
-  a.href = URL.createObjectURL(blob);
-
-  // Append the link element to the document
-  document.body.appendChild(a);
-
-  // Click the link to download the JSON file
-  a.click();
-
-  // Remove the link element from the document
-  document.body.removeChild(a);
+  xhr.send();
 }
+
 
 function loadFromJSON() {
   // Create a file input element
@@ -111,4 +128,43 @@ function displayFileContent() {
   // Update the value of the input element
   inputElement.value = wordsString;
 }
+
+function generateNegativePrompt() {
+  // Load the JSON file if it exists
+  let data;
+  const xhr = new XMLHttpRequest();
+  xhr.open("GET", "words.json", true);
+  xhr.onload = function(e) {
+    if (this.status == 200) {
+      // Parse the file content as JSON
+      const fileContent = JSON.parse(this.response);
+
+      // Get the words array from the file content
+      const words = fileContent.words;
+
+      // Check if there are enough words in the array
+      if (words.length < 20) {
+        alert("Error: Not enough words in the file. Please add more words to the file and try again.");
+        return;
+      }
+
+      // Create an array to store the selected words
+      const selectedWords = [];
+
+      // Select 20 random words from the array
+      for (let i = 0; i < 20; i++) {
+        const randomIndex = Math.floor(Math.random() * words.length);
+        selectedWords.push(words[randomIndex]);
+      }
+
+      // Join the selected words with commas
+      const selectedWordsString = selectedWords.join(", ");
+
+      // Copy the selected words to the clipboard
+      navigator.clipboard.writeText(selectedWordsString);
+    }
+  };
+  xhr.send();
+}
+
 
