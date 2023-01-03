@@ -59,3 +59,56 @@ function saveToJSON() {
   // Remove the link element from the document
   document.body.removeChild(a);
 }
+
+function loadFromJSON() {
+  // Create a file input element
+  const input = document.createElement("input");
+
+  // Set its type to file and accept to JSON files
+  input.type = "file";
+  input.accept = ".json";
+
+  // Add an event listener to the file input element to trigger the readFile function when a file is selected
+  input.addEventListener("change", readFile);
+
+  // Append the file input element to the document
+  document.body.appendChild(input);
+
+  // Click the file input element to open the file dialog
+  input.click();
+
+  // Remove the file input element from the document
+  document.body.removeChild(input);
+}
+
+function readFile() {
+  // Get the selected file
+  const file = this.files[0];
+
+  // Create a FileReader object
+  const reader = new FileReader();
+
+  // Add an event listener to the FileReader object to trigger the displayFileContent function when the file has been read
+  reader.addEventListener("load", displayFileContent);
+
+  // Read the file as text
+  reader.readAsText(file);
+}
+
+function displayFileContent() {
+  // Get the input element
+  const inputElement = document.getElementById("input");
+
+  // Parse the file content as JSON
+  const fileContent = JSON.parse(this.result);
+
+  // Get the words array from the file content
+  const words = fileContent.words;
+
+  // Join the array elements with commas
+  const wordsString = words.join(", ");
+
+  // Update the value of the input element
+  inputElement.value = wordsString;
+}
+
