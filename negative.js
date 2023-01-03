@@ -41,9 +41,19 @@ function saveToTXT() {
   // Create a link element
   const a = document.createElement("a");
 
-  // Set the link's download attribute to a file name and add the Blob object as its href
+   // Set the link's download attribute to a file name and add the Blob object as its href
   a.download = "words.txt";
-  a.href
+  a.href = URL.createObjectURL(blob);
+
+  // Append the link element to the document
+  document.body.appendChild(a);
+
+  // Click the link to download the TXT file
+  a.click();
+
+  // Remove the link element from the document
+  document.body.removeChild(a);
+}
 
 
 
