@@ -19,62 +19,33 @@ function removeDuplicates() {
   inputElement.value = inputValue;
 }
 
-function saveToJSON() {
+function saveToTXT() {
   // Get the input element and its value
   const inputElement = document.getElementById("input");
   const inputValue = inputElement.value;
 
-  // Split the input value into an array of words or phrases
-  const inputArray = inputValue.split(",");
+  // Create a Blob object with the input value as its content
+  const blob = new Blob([inputValue], {
+    type: "text/plain"
+  });
 
-  // Remove any leading or trailing whitespace from the array elements
-  const cleanInputArray = inputArray.map(str => str.trim());
+  // Create a link element
+  const a = document.createElement("a");
 
-  // Load the JSON file if it exists
-  let data;
-  const xhr = new XMLHttpRequest();
-  xhr.open("GET", "words.json", true);
-  xhr.responseType = "blob";
-  xhr.onload = function(e) {
-    if (this.status == 200) {
-      // Parse the file content as JSON
-      const fileContent = JSON.parse(this.response);
+  // Set the link's download attribute to a file name and add the Blob object as its href
+  a.download = "words.txt";
+  a.href = URL.createObjectURL(blob);
 
-      // Get the words array from the file content
-      const words = fileContent.words;
+  // Append the link element to the document
+  document.body.appendChild(a);
 
-      // Concatenate the new words to the existing words array
-      data = {
-        words: words.concat(cleanInputArray)
-      };
+  // Click the link to download the TXT file
+  a.click();
 
-      // Stringify the JSON object
-      const json = JSON.stringify(data);
-
-      // Create a Blob object with the JSON string as its content
-      const blob = new Blob([json], {
-        type: "application/json"
-      });
-
-      // Create a link element
-      const a = document.createElement("a");
-
-      // Set the link's download attribute to a file name and add the Blob object as its href
-      a.download = "words.json";
-      a.href = URL.createObjectURL(blob);
-
-      // Append the link element to the document
-      document.body.appendChild(a);
-
-      // Click the link to download the JSON file
-      a.click();
-
-      // Remove the link element from the document
-      document.body.removeChild(a);
-    }
-  };
-  xhr.send();
+  // Remove the link element from the document
+  document.body.removeChild(a);
 }
+
 
 
 function loadFromJSON() {
