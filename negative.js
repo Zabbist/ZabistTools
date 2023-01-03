@@ -34,9 +34,7 @@ function saveToTXT() {
   inputValue = inputArray.join("\n");
 
   // Create a Blob object with the input value as its content
-  const blob = new Blob([inputValue], {
-    type: "text/plain"
-  });
+  const blob = new Blob([inputValue], {type: "text/plain"});
 
   // Create a link element
   const a = document.createElement("a");
