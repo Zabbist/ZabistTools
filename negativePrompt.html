@@ -1,17 +1,58 @@
+<!DOCTYPE html>
 <html>
-  <head>
-    <link rel="stylesheet" type="text/css" href="style.css">
-    <script src="negative.js"></script>
-  </head>
-  <body>
-    <form>
-      <label for="input">Enter words or phrases separated by commas:</label><br>
-      <textarea id="input"></textarea><br>
-      <button type="button" onclick="removeDuplicates()">Remove duplicates</button>
-      <button type="button" onclick="saveToTXT()">Save to TXT file</button>
-      <button type="button" onclick="loadFromJSON()">Load from JSON file</button>
-      <button type="button" onclick="generateNegativePrompt()">Generate negative prompt</button>
-    </form> 
-    <a href="index.html">Main Page</a>
-  </body>
+<head>
+  <title>Negative Prompt Generator</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+   <script src="negative.js"></script>
+</head>
+<body>
+  <h1>Negative Prompt Generator</h1>
+  <p>Enter a list of words or phrases separated by commas:</p>
+  <textarea id="input"></textarea>
+  <br>
+  <button onclick="generateNegativePrompt()">Generate Negative Prompt</button>
+  <br><br>
+  <p>Selected Words:</p>
+  <textarea id="output"></textarea>
+  <script>
+    function generateNegativePrompt() {
+      // Get the input element and its value
+      const inputElement = document.getElementById("input");
+      let inputValue = inputElement.value;
+
+      // Split the input value into an array of words or phrases
+      let inputArray = inputValue.split(",");
+
+      // Remove any leading or trailing whitespace from the array elements
+      inputArray = inputArray.map(str => str.trim());
+
+      // Check if there are enough words in the array
+      if (inputArray.length < 20) {
+        alert("Error: Not enough words in the input. Please add more words and try again.");
+        return;
+      }
+
+      // Create an array to store the selected words
+      const selectedWords = [];
+
+      // Select 20 random words from the array
+      for (let i = 0; i < 20; i++) {
+        const randomIndex = Math.floor(Math.random() * inputArray.length);
+        selectedWords.push(inputArray[randomIndex]);
+      }
+
+      // Join the selected words with commas
+      const selectedWordsString = selectedWords.join(", ");
+
+      // Update the output element with the selected words
+      const outputElement = document.getElementById("output");
+      outputElement.value = selectedWordsString;
+
+      // Clear the input element
+      inputElement.value = "";
+    }
+  </script>
+  <a href="index.html">Main Page</a>
+</body>
 </html>
+
