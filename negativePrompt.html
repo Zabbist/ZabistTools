@@ -2,8 +2,6 @@
 <html>
 <head>
   <title>Negative Prompt Generator</title>
-  <link rel="stylesheet" type="text/css" href="style.css">
-   <script src="negative.js"></script>
 </head>
 <body>
   <h1>Negative Prompt Generator</h1>
@@ -14,6 +12,8 @@
   <br><br>
   <p>Selected Words:</p>
   <textarea id="output"></textarea>
+  <br>
+  <button onclick="copyToClipboard()">Copy to Clipboard</button>
   <script>
     function generateNegativePrompt() {
       // Get the input element and its value
@@ -51,8 +51,16 @@
       // Clear the input element
       inputElement.value = "";
     }
+
+    function copyToClipboard() {
+      // Get the output element and its value
+      const outputElement = document.getElementById("output");
+      const outputValue = outputElement.value;
+
+      // Copy the output value to the clipboard
+      navigator.clipboard.writeText(outputValue);
+    }
   </script>
-  <a href="index.html">Main Page</a>
 </body>
 </html>
 
