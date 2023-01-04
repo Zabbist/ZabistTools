@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Bedroom Generator</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+  </head>
+  <body>
+    <h1>Bedroom Generator</h1>
+    <button onclick="generatePrompt()">Generate Prompt</button>
+    <br><br>
+    <textarea id="prompt"></textarea>
+    <script>
+      function generatePrompt() {
+        // These arrays contain various options for each aspect of the bedroom
+        const bedTypes = ["big", "small", "for kids", "for parents", "for siblings"];
+        const bedFeatures = ["with a WC", "with closets", "with other furniture"];
+        const bedSizes = ["queen", "king", "twin", "full", "california king"];
+        const furnitureTypes = ["dresser", "nightstand", "desk", "chair", "bookshelf"];
+        const furnitureSizes = ["small", "medium", "large"];
+        const decorColors = ["blue", "green", "pink", "purple", "orange", "neutral"];
+
+        // Choose a random option from each array
+        const bedType = bedTypes[Math.floor(Math.random() * bedTypes.length)];
+        const bedFeature = bedFeatures[Math.floor(Math.random() * bedFeatures.length)];
+        const bedSize = bedSizes[Math.floor(Math.random() * bedSizes.length)];
+        const furnitureType = furnitureTypes[Math.floor(Math.random() * furnitureTypes.length)];
+        const furnitureSize = furnitureSizes[Math.floor(Math.random() * furnitureSizes.length)];
+        const decorColor = decorColors[Math.floor(Math.random() * decorColors.length)];
+
+        // Assemble the prompt string using the randomly chosen options
+        let prompt = "a modern bedroom with a " + bedType + " " + bedSize + " bed " + bedFeature + ", a " + furnitureSize + " " + furnitureType + ", and " + decorColor + " decor";
+
+        // Set the value of the textarea element to the generated prompt
+        document.getElementById("prompt").value = prompt;
+      }
+    </script>
+  </body>
+</html>
