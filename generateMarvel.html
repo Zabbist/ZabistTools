@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Text Replacer</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<h1>Generate Character</h1>
+  <button onclick="generateMarvelCharacter()">Generate Marvel Character</button>
+  <script>
+    
+    function generateMarvelCharacter() {
+      // Generate a random number between 0 and 1
+      const isMale = Math.random() < 0.5;
+
+      // Generate a random hair color
+      const hairColors = ["black", "brown", "blonde", "red", "gray"];
+      const hairColor = hairColors[Math.floor(Math.random() * hairColors.length)];
+
+      // Generate a random outfit
+      const outfits = ["suit", "uniform", "leather jacket", "costume", "street clothes"];
+      const outfit = outfits[Math.floor(Math.random() * outfits.length)];
+
+      // Generate a random power
+      const powers = ["super strength", "flight", "telepathy", "super speed", "energy blasts"];
+      const power = powers[Math.floor(Math.random() * powers.length)];
+
+      // Generate a random background environment
+      const environments = ["city", "desert", "jungle", "mountains", "underwater"];
+      const environment = environments[Math.floor(Math.random() * environments.length)];
+
+      // Generate the character prompt
+      const characterPrompt = `Meet a ${isMale ? "male" : "female"} Marvel character with ${hairColor} hair, dressed in a ${outfit}, who can use the power of ${power} and hails from the ${environment}.`;
+
+      // Copy the character prompt to the clipboard
+      navigator.clipboard.writeText(characterPrompt);
+    }
+  </script>
+</body>
+</html>
