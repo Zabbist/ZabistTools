@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Text Replacer</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<h1>Generate Character</h1>
+  <button onclick="generateCharacter()">Generate Character</button>
+  <script>
+
+    function generateCharacter() {
+      // Generate a random number between 0 and 1
+      const isMale = Math.random() < 0.5;
+
+      // Generate a random age between 18 and 60
+      const age = Math.floor(Math.random() * (60 - 18 + 1)) + 18;
+
+      // Generate a random name
+      const names = [
+        "James", "John", "Robert", "Michael", "William",
+        "David", "Richard", "Charles", "Joseph", "Thomas",
+        "Christopher", "Daniel", "Paul", "Mark", "Donald",
+        "George", "Kenneth", "Steven", "Edward", "Brian",
+        "Ronald", "Anthony", "Kevin", "Jason", "Matthew",
+        "Gary", "Timothy", "Jose", "Larry", "Jeffrey",
+        "Frank", "Scott", "Eric"
+      ];
+      const name = names[Math.floor(Math.random() * names.length)];
+
+      // Generate a random occupation
+      const occupations = [
+        "doctor", "lawyer", "teacher", "writer", "artist",
+        "programmer", "engineer", "scientist", "salesperson",
+        "manager", "chef", "construction worker", "nurse",
+        "police officer", "firefighter", "bartender", "waiter",
+        "carpenter", "electrician", "mechanic", "plumber",
+        "farmer", "landscaper", "architect", "accountant",
+        "banker", "real estate agent", "musician", "actor",
+        "athlete", "coach"
+      ];
+      const occupation = occupations[Math.floor(Math.random() * occupations.length)];
+
+      // Generate the character prompt
+      const characterPrompt = `Meet ${name}, a ${age} year old ${isMale ? "male" : "female"} ${occupation}.`;
+
+      // Copy the character prompt to the clipboard
+      navigator.clipboard.writeText(characterPrompt);
+    }
+  </script>
+</body>
+</html>
