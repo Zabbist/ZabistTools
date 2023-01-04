@@ -7,8 +7,7 @@
   <body>
     <h1>Bedroom Generator</h1>
     <button onclick="generatePrompt()">Generate Prompt</button>
-    <br><br>
-    <textarea id="prompt"></textarea>
+    
     <script>
       function generatePrompt() {
         // These arrays contain various options for each aspect of the bedroom
@@ -28,10 +27,11 @@
         const decorColor = decorColors[Math.floor(Math.random() * decorColors.length)];
 
         // Assemble the prompt string using the randomly chosen options
-        let prompt = "a modern bedroom with a " + bedType + " " + bedSize + " bed " + bedFeature + ", a " + furnitureSize + " " + furnitureType + ", and " + decorColor + " decor";
+        const prompt = "a modern bedroom with a " + bedType + " " + bedSize + " bed " + bedFeature + ", a " + furnitureSize + " " + furnitureType + ", and " + decorColor + " decor";
 
-        // Set the value of the textarea element to the generated prompt
-        document.getElementById("prompt").value = prompt;
+        // Copy the character prompt to the clipboard
+        navigator.clipboard.writeText(prompt);
+
       }
     </script>
   </body>
