@@ -31,7 +31,7 @@
       const environment = environments[Math.floor(Math.random() * environments.length)];
 
       // Generate the character prompt
-      const characterPrompt = `Meet a ${isMale ? "male" : "female"} Marvel character with ${hairColor} hair, dressed in a ${outfit}, who can use the power of ${power} and hails from the ${environment}.`;
+      const characterPrompt = `Portrait of a ${isMale ? "male" : "female"} Marvel character with ${hairColor} hair, dressed in a ${outfit}, who can use the power of ${power} and hails from the ${environment}.`;
 
       // Copy the character prompt to the clipboard
       navigator.clipboard.writeText(characterPrompt);
