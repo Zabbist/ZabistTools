@@ -11,27 +11,162 @@
   <script>
     
     function generateMarvelCharacter() {
-      // Generate a random number between 0 and 1
-      const isMale = Math.random() < 0.5;
+      // Marvel Characters
+      const marvelCharacters = [
+        "Iron Man",
+        "Captain America",
+        "Thor",
+        "Hulk",
+        "Black Widow",
+        "Hawkeye",
+        "Spider-Man",
+        "Wolverine",
+        "Professor X",
+        "Cyclops",
+        "Jean Grey",
+        "Storm",
+        "Rogue",
+        "Nightcrawler",
+        "Gambit",
+        "Beast",
+        "Iceman",
+        "Angel",
+        "Cable",
+        "Domino",
+        "Deadpool",
+        "Black Panther",
+        "Captain Marvel",
+        "Doctor Strange",
+        "Scarlet Witch",
+        "Vision",
+        "Falcon",
+        "War Machine",
+        "She-Hulk",
+        "Miss America",
+        "Quake",
+        "Ironheart",
+        "Ghost-Spider",
+        "Moon Girl",
+        "Red Widow",
+        "Silk",
+        "Star-Lord",
+        "Loki",
+        "Viv Vision",
+        "Miss Fury",
+        "Namor",
+        "Nova",
+        "Gamora",
+        "Drax the Destroyer",
+        "Rocket Raccoon",
+        "Groot",
+        "Mantis",
+        "Adam Warlock",
+        "Moondragon",
+        "Beta Ray Bill",
+        "Captain Marvel (Mar-Vell)",
+        "Ronan the Accuser",
+        "Thanos",
+        "Ego the Living Planet",
+        "Gala",
+        "Mephisto",
+        "Odin",
+        "Surtur",
+        "Zeus"
+      ];
+      const character = marvelCharacters[Math.floor(Math.random() * marvelCharacters.length)];
 
-      // Generate a random hair color
-      const hairColors = ["black", "brown", "blonde", "red", "gray"];
-      const hairColor = hairColors[Math.floor(Math.random() * hairColors.length)];
-
-      // Generate a random outfit
-      const outfits = ["suit", "uniform", "leather jacket", "costume", "street clothes"];
-      const outfit = outfits[Math.floor(Math.random() * outfits.length)];
+    // Marvel Outfits
+      const marvelCostumes = [
+        "Armor with repulsor blasts and flight in red and gold colors",
+        "Shield and enhanced strength and agility in red, white, and blue colors",
+        "Hammer with flight and lightning control in red and blue with silver accents",
+        "Super strength, durability, and healing factor in green",
+        "Agility, weapons training, and espionage skills in black and red",
+        "Marksmanship, fighting skills, and use of trick arrows in purple and blue",
+        "Super strength, agility, web-slinging, and spider-sense in red and blue",
+        "Adamantium claws, regenerative healing factor, and heightened senses in yellow and blue",
+        "Telepathy, mind control, and telepathic illusions in green and yellow",
+        "Optic blasts, force fields, and leadership skills in blue and yellow",
+        "Telekinesis, telepathy, and telepathic illusions in red and green",
+        "Weather manipulation, flight, and lightning control in white and blue",
+        "Ability to absorb powers and memories of others, and flight in green and yellow",
+        "Teleportation, heightened agility and senses, and retractable claws in blue and yellow",
+        "Ability to charge objects with kinetic energy, and card throwing skills in red and black",
+        "Super strength, agility, and heightened senses in blue and yellow",
+        "Ability to manipulate ice and cold, and flight in white and blue",
+        "Wings, flight, and heightened senses in yellow and red",
+        "Telepathy, telekinesis, technopathy, and time travel in gray and red"
+      ]; 
+      const costume = marvelCostumes[Math.floor(Math.random() * marvelCostumes.length)];
 
       // Generate a random power
-      const powers = ["super strength", "flight", "telepathy", "super speed", "energy blasts"];
-      const power = powers[Math.floor(Math.random() * powers.length)];
+      const marvelPowers = [
+        "Super strength",
+        "Flight",
+        "Telepathy",
+        "Super speed",
+        "Energy blasts",
+        "Invulnerability",
+        "Super agility",
+        "Healing factor",
+        "Energy projection",
+        "Weather manipulation",
+        "Molecular manipulation",
+        "Telekinesis",
+        "Shape-shifting",
+        "Invisibility",
+        "Size-changing",
+        "Teleportation",
+        "Intangibility",
+        "Elemental control",
+        "Photographic reflexes",
+        "Precognition",
+        "Reality warping",
+        "Time travel",
+        "Astral projection",
+        "Energy absorption",
+        "Clairvoyance",
+        "Empathy",
+        "Energy manipulation",
+        "Psionic powers",
+        "Super senses",
+        "Illusion casting",
+        "Animal control"
+      ];
+      const power = marvelPowers[Math.floor(Math.random() * marvelPowers.length)];
 
       // Generate a random background environment
-      const environments = ["city", "desert", "jungle", "mountains", "underwater"];
-      const environment = environments[Math.floor(Math.random() * environments.length)];
+      const marvelEnvironments = [
+        "New York City",
+        "Wakanda",
+        "Asgard",
+        "Savage Land",
+        "Xavier's School for Gifted Youngsters",
+        "Hell's Kitchen",
+        "Latveria",
+        "Knowhere",
+        "X-Mansion",
+        "The Negative Zone",
+        "Latveria",
+        "The Blue Area of the Moon",
+        "The Dark Dimension",
+        "The Microverse",
+        "Nanda Parbat",
+        "The Savage Land",
+        "The Triskelion",
+        "The Blue Area of the Moon",
+        "The Kyln",
+        "The Kree Empire",
+        "The Shi'ar Empire",
+        "The Skrull Empire",
+        "The Brood Empire",
+        "The Negative Zone"
+      ];
+
+      const environment = marvelEnvironments[Math.floor(Math.random() * marvelEnvironments.length)];
 
       // Generate the character prompt
-      const characterPrompt = `Portrait of a ${isMale ? "male" : "female"} Marvel character with ${hairColor} hair, dressed in a ${outfit}, who can use the power of ${power} and hails from the ${environment}.`;
+      const characterPrompt = `Portrait of  ${character} wearing a ${costume} costume, with ${power} powers, ${environment} background.`;
 
       // Copy the character prompt to the clipboard
       navigator.clipboard.writeText(characterPrompt);
