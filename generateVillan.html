@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Villain Generator</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+  </head>
+  <body>
+    <h1>Villain Generator</h1>
+    <button onclick="generateVillain()">Generate Villain</button>
+      
+    <script>
+      function generateVillain() {
+        // These arrays contain various options for each aspect of the villain
+        const villainNames = ["Dr. Evil", "The Joker", "Darkseid", "Loki", "Thanos"];
+        const villainMotives = ["world domination", "revenge", "power", "greed", "destruction"];
+        const villainAbilities = ["super strength", "super speed", "invulnerability", "telekinesis", "mind control"];
+        const villainGadgets = ["laser gun", "death ray", "time machine", "invisibility cloak", "teleportation device"];
+
+        // Choose a random option from each array
+        const name = villainNames[Math.floor(Math.random() * villainNames.length)];
+        const motive = villainMotives[Math.floor(Math.random() * villainMotives.length)];
+        const ability = villainAbilities[Math.floor(Math.random() * villainAbilities.length)];
+        const gadget = villainGadgets[Math.floor(Math.random() * villainGadgets.length)];
+
+        // Assemble the villain string using the randomly chosen options
+        const villain = name + " is a villain with a motive of " + motive + ". They have the ability of " + ability + " and use a " + gadget + " to carry out their plans.";
+
+        // Copy the character prompt to the clipboard
+        navigator.clipboard.writeText(villain);
+      }
+    </script>
+  </body>
+</html>
