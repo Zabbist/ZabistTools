@@ -1,8 +1,12 @@
 const colorList = ['red', 'green', 'blue', 'purple', 'pink'];
+const ageList = [ 10, 20, 30, 40]
 
 function copyToClipboard() {
   const randomColor = colorList[Math.floor(Math.random() * colorList.length)];
-  navigator.clipboard.writeText(randomColor).then(function() {
+  const age = ageList[Math.floor(Math.random() * ageList.length)];
+  const prompt = `Cor ${randomColor} e número ${age}`;
+  
+  navigator.clipboard.writeText(prompt).then(function() {
     /* clipboard successfully set */
     displayCopyMessage();
   }, function() {
