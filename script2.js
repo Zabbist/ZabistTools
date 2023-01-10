@@ -157,7 +157,7 @@ function copyToClipboard() {
   const dress = womenFashionOutfits[Math.floor(Math.random() * womenFashionOutfits.length)];
   const light = lightingTypes[Math.floor(Math.random() * lightingTypes.length)];
   
-  const photo = `camView + age + hairStyle + hairColor + eyeType + eyeColor + modernModel + dressColor + dress + light;
+  const photo = camView + age + hairStyle + hairColor + eyeType + eyeColor + modernModel + dressColor + dress + light;
   
     navigator.clipboard.writeText(photo);
 }
