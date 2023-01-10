@@ -33,7 +33,7 @@ function copyToClipboard() {
   const camView = cameraView[Math.floor(Math.random() * cameraView.length)];
   const age = Math.floor(Math.random() * (40 - 20 + 1)) + 20;
   const hairStyle = hairStyles[Math.floor(Math.random() * hairStyles.length)];
-  const photo = camView + " of a " + age + " year old woman with " + hairStyle;
+  let photo = `${camView} of a ${age} year old woman with ${hairStyle}`;
 
   
   navigator.clipboard.writeText(photo).then(function() {
