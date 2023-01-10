@@ -153,11 +153,11 @@ function copyToClipboard() {
   const eyeType = eyeTypes[Math.floor(Math.random() * eyeTypes.length)];
   const eyeColor = eyeColors[Math.floor(Math.random() * eyeColors.length)];
   const modernModel = modernModels[Math.floor(Math.random() * modernModels.length)];
-  const dress = womenFashionOutfits[Math.floor(Math.random() * womenFashionOutfits.length)];
   const dressColor = outfitColors[Math.floor(Math.random() * outfitColors.length)];
+  const dress = womenFashionOutfits[Math.floor(Math.random() * womenFashionOutfits.length)];
   const light = lightingTypes[Math.floor(Math.random() * lightingTypes.length)];
   
-  const photo = `${camView} of a ${age} year old woman with ${hairStyle} ${hairColor} hair, ${eyeType} ${eyeColor} eyes, impersonating ${modernModel}, wearing a ${dressColor} ${dress}, Nikon D850, ISO 100, f / 2.8, 1 / 125, vivid colors, ${light}, colorful back drop`;
+  const photo = `camView + age + hairStyle + hairColor + eyeType + eyeColor + modernModel + dressColor + dress + light;
   
     navigator.clipboard.writeText(photo);
 }
