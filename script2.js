@@ -34,8 +34,6 @@ function copyToClipboard() {
   const age = Math.floor(Math.random() * (40 - 20 + 1)) + 20;
   const hairStyle = hairStyles[Math.floor(Math.random() * hairStyles.length)];
   
-
-  
   const combined = camView + ', ' + hairStyle;
 
     navigator.clipboard.writeText(combined);
