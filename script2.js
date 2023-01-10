@@ -14,7 +14,7 @@ cameraView = [
 function copyToClipboard() {
  
   const camView = cameraView[Math.floor(Math.random() * cameraView.length)];
-  const photo = ${camView};
+  const photo = camView;
 
   
   navigator.clipboard.writeText(photo).then(function() {
