@@ -157,7 +157,7 @@ function copyToClipboard() {
   const dressColor = outfitColors[Math.floor(Math.random() * outfitColors.length)];
   const light = lightingTypes[Math.floor(Math.random() * lightingTypes.length)];
   
-  const photo = camView + ' of a ' + age + ' year old woman with ' + hairStyle + ' ' + hairColor + ' hair, ' eyeType + '  ' +  eyeColor + ' eyes, ' + 'impersonating' +  modernModel + ', ' + 'wearing a ' + dressColor + ' ' + dress + ', ' + 'Nikon D850, ISO 100, f / 2.8, 1 / 125, vivid colors, ' + light + ', ' + 'colorful back drop';
+  const photo = `${camView} of a ${age} year old woman with ${hairStyle} ${hairColor} hair, ${eyeType} ${eyeColor} eyes, impersonating ${modernModel}, wearing a ${dressColor} ${dress}, Nikon D850, ISO 100, f / 2.8, 1 / 125, vivid colors, ${light}, colorful back drop`;
   
     navigator.clipboard.writeText(photo);
 }
