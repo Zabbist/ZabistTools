@@ -156,10 +156,7 @@ function copyToClipboard() {
   const dressColor = outfitColors[Math.floor(Math.random() * outfitColors.length)];
   const dress = womenFashionOutfits[Math.floor(Math.random() * womenFashionOutfits.length)];
   const light = lightingTypes[Math.floor(Math.random() * lightingTypes.length)];
-  
-  const photo = camView + age + hairStyle + hairColor + eyeType + eyeColor + modernModel + dressColor + dress + light;
-  
-    navigator.clipboard.writeText(photo);
+    navigator.clipboard.writeText(camView);
 }
 
 
