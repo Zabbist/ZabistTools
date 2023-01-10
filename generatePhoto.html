@@ -1,51 +1,12 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <meta charset="utf-8">
-  <title>Generate Photography</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-<h1>Generate Photography</h1>
-  <button onclick="generatePhoto()">Generate</button>
-  <script>
-
-    function generatePhoto() {
-      
-      // Generate a random age between 25 and 30
-      const age = Math.floor(Math.random() * (30 - 25 + 1)) + 25;
-
-      // Generate a random name
-      const names = [
-        "James", "John", "Robert", "Michael", "William",
-        "David", "Richard", "Charles", "Joseph", "Thomas",
-        "Christopher", "Daniel", "Paul", "Mark", "Donald",
-        "George", "Kenneth", "Steven", "Edward", "Brian",
-        "Ronald", "Anthony", "Kevin", "Jason", "Matthew",
-        "Gary", "Timothy", "Jose", "Larry", "Jeffrey",
-        "Frank", "Scott", "Eric"
-      ];
-      const name = names[Math.floor(Math.random() * names.length)];
-
-      // Generate a random occupation
-      const occupations = [
-        "doctor", "lawyer", "teacher", "writer", "artist",
-        "programmer", "engineer", "scientist", "salesperson",
-        "manager", "chef", "construction worker", "nurse",
-        "police officer", "firefighter", "bartender", "waiter",
-        "carpenter", "electrician", "mechanic", "plumber",
-        "farmer", "landscaper", "architect", "accountant",
-        "banker", "real estate agent", "musician", "actor",
-        "athlete", "coach"
-      ];
-      const occupation = occupations[Math.floor(Math.random() * occupations.length)];
-
-      // Generate the character prompt
-      const characterPrompt = `Meet ${name}, a ${age} year old ${isMale ? "male" : "female"} ${occupation}.`;
-
-      // Copy the character prompt to the clipboard
-      navigator.clipboard.writeText(characterPrompt);
-    }
-  </script>
-</body>
+  <head>
+    <script src="script.js"></script>
+  </head>
+  <body>
+    <button onclick="copyToClipboard()">Copy random color to clipboard</button>
+  </body>
 </html>
+
+
+
