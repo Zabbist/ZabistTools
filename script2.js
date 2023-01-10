@@ -33,18 +33,13 @@ function copyToClipboard() {
   const camView = cameraView[Math.floor(Math.random() * cameraView.length)];
   const age = Math.floor(Math.random() * (40 - 20 + 1)) + 20;
   const hairStyle = hairStyles[Math.floor(Math.random() * hairStyles.length)];
-  let photo = `${camView} of a ${age} year old woman with ${hairStyle}`;
+  
 
   
-  navigator.clipboard.writeText(photo).then(function() {
-    /* clipboard successfully set */
-    displayCopyMessage();
-  }, function() {
-    /* clipboard write failed */
-    console.log("Clipboard write failed");
-  });
-}
+  const combined = camView + ', ' + hairStyle;
 
+    navigator.clipboard.writeText(combined);
+}
 
 
 function displayCopyMessage() {
