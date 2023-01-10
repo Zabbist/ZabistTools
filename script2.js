@@ -1,4 +1,4 @@
-cameraView = [
+const cameraView = [
     "headshot",
     "head and shoulders",
     "full body shot",
@@ -9,6 +9,23 @@ cameraView = [
     "higher angle",
     "Over the shoulder",
     "shoot from above, looking down at subject"
+];
+const hairStyles = [
+    "Long and straight",
+    "Long and wavy",
+    "Long and curly",
+    "Medium length and straight",
+    "Medium length and wavy",
+    "Medium length and curly",
+    "Bob",
+    "Pixie cut",
+    "Braided hairstyle",
+    "Updo",
+    "Half-up, half-down",
+    "Bun",
+    "Ponytail",
+    "Fringe/bangs",
+    "Dreadlocks"
 ];
 
 function copyToClipboard() {
