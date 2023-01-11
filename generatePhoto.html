@@ -2,12 +2,12 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>1</title>
+  <title>2</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 <h1>Generate Photography</h1>
-  <button onclick="generatePhoto()">Generate Character</button>
+  <button onclick="generatePhoto()">Generate</button>
   <script>
 
     function generatePhoto() {
@@ -25,14 +25,32 @@
         "shoot from above, looking down at subject"
       ];
       const camera = cameraView[Math.floor(Math.random() * cameraView.length)];
-
       
       const age = Math.floor(Math.random() * (35 - 25 + 1)) + 25;
+      
+      const hairStyles = [
+        "Long and straight",
+        "Long and wavy",
+        "Long and curly",
+        "Medium length and straight",
+        "Medium length and wavy",
+        "Medium length and curly",
+        "Bob",
+        "Pixie cut",
+        "Braided hairstyle",
+        "Updo",
+        "Half-up, half-down",
+        "Bun",
+        "Ponytail",
+        "Fringe/bangs",
+        "Dreadlocks"
+      ];
+      const hairStyle = hairStyles[Math.floor(Math.random() * hairStyles.length)];
 
  
 
       // Generate the Photography
-      const photo = `${camera} of a ${age} year old woman`;
+      const photo = `${camera} of a ${age} year old woman with a ${hairStyle}`;
 
       // Copy the character prompt to the clipboard
       navigator.clipboard.writeText(photo);
