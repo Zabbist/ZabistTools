@@ -2,15 +2,15 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>Text Replacer</title>
+  <title>Generate Photo</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<h1>Generate Character</h1>
-  <button onclick="generateCharacter()">Generate Character</button>
+<h1>Generate Photography</h1>
+  <button onclick="generatePhoto()">Generate Character</button>
   <script>
 
-    function generateCharacter() {
+    function generatePhoto() {
       // Generate a random number between 0 and 1
       const isMale = Math.random() < 0.5;
 
@@ -43,10 +43,10 @@
       const occupation = occupations[Math.floor(Math.random() * occupations.length)];
 
       // Generate the character prompt
-      const characterPrompt = `Meet ${name}, a ${age} year old ${isMale ? "male" : "female"} ${occupation}.`;
+      const photo = `Meet ${name}, a ${age} year old ${isMale ? "male" : "female"} ${occupation}.`;
 
       // Copy the character prompt to the clipboard
-      navigator.clipboard.writeText(characterPrompt);
+      navigator.clipboard.writeText(photo);
     }
   </script>
 </body>
