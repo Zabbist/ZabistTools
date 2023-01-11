@@ -11,39 +11,28 @@
   <script>
 
     function generatePhoto() {
-      // Generate a random number between 0 and 1
-      const isMale = Math.random() < 0.5;
-
-      // Generate a random age between 18 and 60
-      const age = Math.floor(Math.random() * (60 - 18 + 1)) + 18;
-
-      // Generate a random name
-      const names = [
-        "James", "John", "Robert", "Michael", "William",
-        "David", "Richard", "Charles", "Joseph", "Thomas",
-        "Christopher", "Daniel", "Paul", "Mark", "Donald",
-        "George", "Kenneth", "Steven", "Edward", "Brian",
-        "Ronald", "Anthony", "Kevin", "Jason", "Matthew",
-        "Gary", "Timothy", "Jose", "Larry", "Jeffrey",
-        "Frank", "Scott", "Eric"
+      
+      const cameraView = [
+        "headshot",
+        "head and shoulders",
+        "full body shot",
+        "full length",
+        "3/4 body shot",
+        "1/2 body shot",
+        "Shot from above",
+        "higher angle",
+        "Over the shoulder",
+        "shoot from above, looking down at subject"
       ];
-      const name = names[Math.floor(Math.random() * names.length)];
+      const camera = cameraView[Math.floor(Math.random() * cameraView.length)];
 
-      // Generate a random occupation
-      const occupations = [
-        "doctor", "lawyer", "teacher", "writer", "artist",
-        "programmer", "engineer", "scientist", "salesperson",
-        "manager", "chef", "construction worker", "nurse",
-        "police officer", "firefighter", "bartender", "waiter",
-        "carpenter", "electrician", "mechanic", "plumber",
-        "farmer", "landscaper", "architect", "accountant",
-        "banker", "real estate agent", "musician", "actor",
-        "athlete", "coach"
-      ];
-      const occupation = occupations[Math.floor(Math.random() * occupations.length)];
+      
+      const age = Math.floor(Math.random() * (35 - 25 + 1)) + 25;
 
-      // Generate the character prompt
-      const photo = `Meet ${name}, a ${age} year old ${isMale ? "male" : "female"} ${occupation}.`;
+ 
+
+      // Generate the Photography
+      const photo = `${camera} of a ${age} year old woman`;
 
       // Copy the character prompt to the clipboard
       navigator.clipboard.writeText(photo);
