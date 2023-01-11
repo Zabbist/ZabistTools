@@ -1,59 +1,28 @@
-<!DOCTYPE html>
 <html>
-<head>
-  <meta charset="utf-8">
-  <title>Image Uploader_v3</title>
-</head>
-<body>
-  <input type="file" id="fileInput" multiple>
-  <button type="button" onclick="copyImageAddresses()">Copy Image Addresses</button>
-  
-  <script>
-    // Get the file input element
-    const fileInput = document.querySelector('#fileInput');
-    
-    // Add an event listener to the file input element
-    fileInput.addEventListener('change', function() {
-      // Get the selected files
-      const files = fileInput.files;
-      
-      // Loop through the files
-      for (let i = 0; i < files.length; i++) {
-        // Create an image element
-        const img = document.createElement('img');
-        
-        // Set the src of the image element to a URL for the file
-        img.src = URL.createObjectURL(files[i]);
-        
-        // Append the image element to the body
-        document.body.appendChild(img);
-      }
-    });
-    
-    function copyImageAddresses() {
-      // Get the file input element
-      const fileInput = document.querySelector('#fileInput');
-    
-      // Get the selected files
-      const files = fileInput.files;
-    
-      // Get the file addresses
-      const fileAddresses = [];
-      for (let i = 0; i < files.length; i++) {
-        fileAddresses.push("https://zabbist.github.io/ZabistTools/" + files[i].name);
-      }
-    
-      // Join the file addresses with a space character
-      const fileAddressesString = fileAddresses.join(' ');
-    
-      // Write the file addresses string to the clipboard
-      navigator.clipboard.writeText(fileAddressesString).then(function() {
-        console.log('File addresses copied to clipboard');
-      }, function(error) {
-        console.error(error);
-      });
-    }
-
-  </script>
-</body>
+  <head>
+    <title>Name Generator</title>
+  </head>
+  <body>
+    <h1>Name Generator</h1>
+    <ul>
+      <li>Mary</li>
+      <li>John</li>
+    </ul>
+    <ul>
+      <li>Freeman</li>
+      <li>Cowell</li>
+    </ul>
+    <button onclick="generateName()">Generate Name</button>
+    <script>
+      function generateName() {
+        var firstList = ['Mary', 'John'];
+        var secondList = ['Freeman', 'Cowell'];
+        var firstName = firstList[Math.floor(Math.random() * firstList.length)];
+        var secondName = secondList[Math.floor(Math.random() * secondList.length)];
+        var name = firstName + ' ' + secondName;
+  document.execCommand('copy');
+  return name;
+}
+    </script>
+  </body>
 </html>
