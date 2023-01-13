@@ -54,7 +54,7 @@ function cropAndDownload_TR() {
   // Create a canvas element
   const canvas = document.createElement('canvas');
   canvas.width = 512;
-  canvas.height = 512;
+  canvas.height = 768;
 
   // Get the canvas context
   const ctx = canvas.getContext('2d');
@@ -89,7 +89,7 @@ function cropAndDownload_BL() {
   // Create a canvas element
   const canvas = document.createElement('canvas');
   canvas.width = 512;
-  canvas.height = 512;
+  canvas.height = 768;
 
   // Get the canvas context
   const ctx = canvas.getContext('2d');
@@ -124,7 +124,7 @@ function cropAndDownload_BR() {
   // Create a canvas element
   const canvas = document.createElement('canvas');
   canvas.width = 512;
-  canvas.height = 512;
+  canvas.height = 768;
 
   // Get the canvas context
   const ctx = canvas.getContext('2d');
