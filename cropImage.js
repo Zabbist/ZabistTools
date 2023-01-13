@@ -19,13 +19,13 @@ function cropAndDownload_TL() {
   // Create a canvas element
   const canvas = document.createElement('canvas');
   canvas.width = 512;
-  canvas.height = 512;
+  canvas.height = 768;
 
   // Get the canvas context
   const ctx = canvas.getContext('2d');
 
   // Draw the top left quadrant of the image onto the canvas
-  ctx.drawImage(image, 0, 0, 512, 512, 0, 0, 512, 512);
+  ctx.drawImage(image, 0, 0, 512, 768, 0, 0, 512, 768);
 
   // Get the data URL of the canvas
   const dataURL = canvas.toDataURL();
@@ -60,7 +60,7 @@ function cropAndDownload_TR() {
   const ctx = canvas.getContext('2d');
 
   // Draw the top left quadrant of the image onto the canvas
-  ctx.drawImage(image, 512, 0, 512, 512, 0, 0, 512, 512);
+  ctx.drawImage(image, 512, 0, 512, 768, 0, 0, 512, 768);
 
   // Get the data URL of the canvas
   const dataURL = canvas.toDataURL();
@@ -95,7 +95,7 @@ function cropAndDownload_BL() {
   const ctx = canvas.getContext('2d');
 
   // Draw the top left quadrant of the image onto the canvas
-  ctx.drawImage(image, 0, 512, 512, 512, 0, 0, 512, 512);
+  ctx.drawImage(image, 0, 512, 512, 768, 0, 0, 512, 768);
 
   // Get the data URL of the canvas
   const dataURL = canvas.toDataURL();
@@ -130,7 +130,7 @@ function cropAndDownload_BR() {
   const ctx = canvas.getContext('2d');
 
   // Draw the top left quadrant of the image onto the canvas
-  ctx.drawImage(image, 512, 512, 512, 512, 0, 0, 512, 512);
+  ctx.drawImage(image, 512, 768, 512, 512, 0, 0, 512, 768);
 
 
   // Get the data URL of the canvas
