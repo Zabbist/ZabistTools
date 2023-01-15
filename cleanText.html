@@ -21,14 +21,14 @@
         "Simon Stalenhag", "Wayne Barlowe", "Igor Kieryluk", "Raphael", "Caravaggio", 
         "Ghibli", "Steampunk", "Raphael", "Caravaggio", "Greg Rutkowski", "Beeple", 
         "Beksinski", "Giger", "Artgerm", "Simon Stalenhag", "Wayne Barlowe", 
-        "Igor Kieryluk","by"
+        "Igor Kieryluk"
       ];
 
       function removeArtists() {
         var input = document.getElementById("input").value;
         for (var i = 0; i < artists.length; i++) {
           var artist = artists[i].toLowerCase();
-          var regex = new RegExp(artist + "(,)?", "gi");
+          var regex = new RegExp("(by)?\\s*"+artist + "(,)?\\s*(by)?", "gi");
           input = input.replace(regex, "");
         }
         document.getElementById("input").value = input;
