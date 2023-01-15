@@ -14,10 +14,14 @@
         var text1 = document.getElementById("text1").value;
         var text2 = document.getElementById("text2").value;
         var text3 = document.getElementById("text3");
-        var wordsToRemove = text2.split(" ");
+        var wordsToRemove = text2.split(",");
         for (var i = 0; i < wordsToRemove.length; i++) {
-            text1 = text1.replace(new RegExp("\\b" + wordsToRemove[i] + "\\b", "gi"), "");
-       }
+            var word = wordsToRemove[i].trim();
+            text1 = text1.replace(new RegExp("\\b" + word + "\\b", "gi"), "");
+      }
+    text3.value = text1;
+}
+
         text3.value = text1;
 }
     </script>
