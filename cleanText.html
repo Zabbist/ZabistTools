@@ -7,7 +7,8 @@
     <textarea id="input"></textarea>
     <button onclick="removeArtists()">Remove Artists</button>
     <script>
-      var artists = ["Gustave Dore", "Albrecht Durer", "Loish", "Rhads", "Beeple", 
+      const artists = [
+        "Gustave Dore", "Albrecht Durer", "Loish", "Rhads", "Beeple", 
         "Makoto Shinkai", "Lois van Baarle", "Ilya Kuvshinov", "Rossdraws", 
         "Tom Bagshaw", "Alphonse Mucha", "Greg Rutkowski", "Beksinski", "Giger", 
         "Woolitize", "Ayami Kojima", "Karol Bak", "Greg Hildebrandt", "Mark Brooks", 
@@ -20,17 +21,19 @@
         "Simon Stalenhag", "Wayne Barlowe", "Igor Kieryluk", "Raphael", "Caravaggio", 
         "Ghibli", "Steampunk", "Raphael", "Caravaggio", "Greg Rutkowski", "Beeple", 
         "Beksinski", "Giger", "Artgerm", "Simon Stalenhag", "Wayne Barlowe", 
-        "Igor Kieryluk"];
+        "Igor Kieryluk"
+      ];
 
       function removeArtists() {
         var input = document.getElementById("input").value;
         for (var i = 0; i < artists.length; i++) {
           var artist = artists[i].toLowerCase();
-          var regex = new RegExp(artist, "gi");
+          var regex = new RegExp(artist + "(,)?", "gi");
           input = input.replace(regex, "");
         }
         document.getElementById("input").value = input;
       }
     </script>
+    <a href="index.html">Main Page</a
   </body>
 </html>
