@@ -4,40 +4,20 @@
   
 </head>
   <body>
-    <h1>Remove words in 2 from text in 1</h1>
-    <textarea id="text1"></textarea>
-    <textarea id="text2"></textarea>
-    <button id="button" onclick="removeWords()">Text without artist names</button>
-    <textarea id="text3"></textarea>
+    <textarea id="input"></textarea>
+    <button onclick="removeArtists()">Remove Artists</button>
     <script>
-      const artistList = [
-        "Gustave Dore", "Albrecht Durer", "Loish", "Rhads", "Beeple", 
-        "Makoto Shinkai", "Lois van Baarle", "Ilya Kuvshinov", "Rossdraws", 
-        "Tom Bagshaw", "Alphonse Mucha", "Greg Rutkowski", "Beksinski", "Giger", 
-        "Woolitize", "Ayami Kojima", "Karol Bak", "Greg Hildebrandt", "Mark Brooks", 
-        "Artgerm", "H. R. Giger", "Alberto Seveso", "Dilraba Dilmurat", 
-        "Michael Whelan", "Greg Rutkowski", "Alphonse Mucha", "Laurie Greasley", 
-        "Studio Ghibli", "Akira Toriyama", "James Gilleard", "Genshin Impact", 
-        "Devinart", "Artgem", "Charlie Bowater", "Anne Bachelier", "Agnes Cecile", 
-        "Margaret Keane", "Rolf Armstrong", "Simon Stalenhag", "Wayne Barlowe", 
-        "Igor Kieryluk", "Klimt", "Beeple", "Beksinski", "Giger", "Artgerm", 
-        "Simon Stalenhag", "Wayne Barlowe", "Igor Kieryluk", "Raphael", "Caravaggio", 
-        "Ghibli", "Steampunk", "Raphael", "Caravaggio", "Greg Rutkowski", "Beeple", 
-        "Beksinski", "Giger", "Artgerm", "Simon Stalenhag", "Wayne Barlowe", 
-        "Igor Kieryluk"
-      ];
+      var artists = ["Gustave Dore", "Albrecht Durer", "Loish", "Rhads"];
 
-      function removeWords() {
-          var text1 = document.getElementById("text1").value;
-          var text3 = document.getElementById("text3");
-          for (var i = 0; i < artistList.length; i++) {
-              var artist = artistList[i].trim();
-              text1 = text1.replace(new RegExp("\\b" + artist + "\\b", "gi"), "");
+      function removeArtists() {
+        var input = document.getElementById("input").value;
+        for (var i = 0; i < artists.length; i++) {
+          var artist = artists[i].toLowerCase();
+          var regex = new RegExp(artist, "gi");
+          input = input.replace(regex, "");
+        }
+        document.getElementById("input").value = input;
       }
-      text3.value = text1;
-
-    
     </script>
-    <a href="index.html">Main Page</a>
   </body>
 </html>
