@@ -1,0 +1,26 @@
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  
+</head>
+  <body>
+    <h1>Remove words in 2 from text in 1</h1>
+    <textarea id="text1"></textarea>
+    <textarea id="text2"></textarea>
+    <button id="button" onclick="removeWords()">Update Third Text Area</button>
+    <textarea id="text3"></textarea>
+    <script>
+      function removeWords() {
+        var text1 = document.getElementById("text1").value;
+        var text2 = document.getElementById("text2").value;
+        var text3 = document.getElementById("text3");
+        var wordsToRemove = text2.split(" ");
+        for (var i = 0; i < wordsToRemove.length; i++) {
+            text1 = text1.replace(new RegExp("\\b" + wordsToRemove[i] + "\\b", "gi"), "");
+       }
+        text3.value = text1;
+}
+    </script>
+    <a href="index.html">Main Page</a>
+  </body>
+</html>
