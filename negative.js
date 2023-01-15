@@ -109,37 +109,23 @@ function displayFileContent() {
 }
 
 function generateNegativePrompt() {
-  // Load the JSON file if it exists
   let data;
   const xhr = new XMLHttpRequest();
   xhr.open("GET", "words.json", true);
   xhr.onload = function(e) {
     if (this.status == 200) {
-      // Parse the file content as JSON
       const fileContent = JSON.parse(this.response);
-
-      // Get the words array from the file content
       const words = fileContent.words;
-
-      // Check if there are enough words in the array
       if (words.length < 20) {
         alert("Error: Not enough words in the file. Please add more words to the file and try again.");
         return;
       }
-
-      // Create an array to store the selected words
-      const selectedWords = [];
-
-      // Select 20 random words from the array
-      for (let i = 0; i < 20; i++) {
+      const selectedWords = new Set();
+      while (selectedWords.size < 20) {
         const randomIndex = Math.floor(Math.random() * words.length);
-        selectedWords.push(words[randomIndex]);
+        selectedWords.add(words[randomIndex]);
       }
-
-      // Join the selected words with commas
-      const selectedWordsString = selectedWords.join(", ");
-
-      // Copy the selected words to the clipboard
+      const selectedWordsString = [...selectedWords].join(", ");
       navigator.clipboard.writeText(selectedWordsString);
     }
   };
