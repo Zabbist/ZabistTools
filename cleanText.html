@@ -10,15 +10,33 @@
     <button id="button" onclick="removeWords()">Update Third Text Area</button>
     <textarea id="text3"></textarea>
     <script>
+      const artistList = [
+        "Gustave Dore", "Albrecht Durer", "Loish", "Rhads", "Beeple", 
+        "Makoto Shinkai", "Lois van Baarle", "Ilya Kuvshinov", "Rossdraws", 
+        "Tom Bagshaw", "Alphonse Mucha", "Greg Rutkowski", "Beksinski", "Giger", 
+        "Woolitize", "Ayami Kojima", "Karol Bak", "Greg Hildebrandt", "Mark Brooks", 
+        "Artgerm", "H. R. Giger", "Alberto Seveso", "Dilraba Dilmurat", 
+        "Michael Whelan", "Greg Rutkowski", "Alphonse Mucha", "Laurie Greasley", 
+        "Studio Ghibli", "Akira Toriyama", "James Gilleard", "Genshin Impact", 
+        "Devinart", "Artgem", "Charlie Bowater", "Anne Bachelier", "Agnes Cecile", 
+        "Margaret Keane", "Rolf Armstrong", "Simon Stalenhag", "Wayne Barlowe", 
+        "Igor Kieryluk", "Klimt", "Beeple", "Beksinski", "Giger", "Artgerm", 
+        "Simon Stalenhag", "Wayne Barlowe", "Igor Kieryluk", "Raphael", "Caravaggio", 
+        "Ghibli", "Steampunk", "Raphael", "Caravaggio", "Greg Rutkowski", "Beeple", 
+        "Beksinski", "Giger", "Artgerm", "Simon Stalenhag", "Wayne Barlowe", 
+        "Igor Kieryluk"
+      ];
+
       function removeWords() {
-        var text1 = document.getElementById("text1").value;
-        var text2 = document.getElementById("text2").value;
-        var text3 = document.getElementById("text3");
-        var wordsToRemove = text2.split(",");
-        for (var i = 0; i < wordsToRemove.length; i++) {
-            var word = wordsToRemove[i].trim();
-            text1 = text1.replace(new RegExp("\\b" + word + "\\b", "gi"), "");
+          var text1 = document.getElementById("text1").value;
+          var text3 = document.getElementById("text3");
+          for (var i = 0; i < artistList.length; i++) {
+              var artist = artistList[i].trim();
+              text1 = text1.replace(new RegExp("\\b" + artist + "\\b", "gi"), "");
       }
+    text3.value = text1;
+}
+
     text3.value = text1;
 }
 
