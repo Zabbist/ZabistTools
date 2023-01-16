@@ -48,6 +48,34 @@
         image.src = URL.createObjectURL(imageFile);
         matrix.appendChild(image);
       }
+
+      // Create a canvas element
+      const canvas = document.createElement("canvas");
+      canvas.width = 527; // width of the final image including the border
+      canvas.height = 786; // height of the final image including the border
+
+      // Get the context of the canvas
+      const context = canvas.getContext("2d");
+
+      // Draw the grid of images on the canvas
+      context.drawImage(matrix, 15, 15);
+
+      // Draw a black rectangle around the grid of images
+      context.fillStyle = "black";
+      context.fillRect(0, 0, 527, 15);
+      context.fillRect(0, 0, 15, 786);
+      context.fillRect(0, 771, 527, 15);
+      context.fillRect(512, 0, 15, 786);
+
+      // Get the data URL of the canvas
+      const dataURL = canvas.toDataURL();
+
+      // Create a download link
+      const downloadLink = document.createElement("a");
+      downloadLink.href = dataURL;
+      downloadLink.download = "grid-image.png";
+      downloadLink.innerHTML = "Download Image";
+      document.body.appendChild(downloadLink);
     }
   </script>
 </body>
