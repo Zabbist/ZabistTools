@@ -192,11 +192,13 @@ button {
 }
 
 .image-matrix {
-    display: flex;
-    flex-wrap: wrap;
- }
+   display: flex;
+   flex-wrap: wrap;
+}
 .image-matrix img {
-    margin: 5px;
- }
+   width: 260px;
+   height: 390px;
+   margin: 5px;
+}
 
 
