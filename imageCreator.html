@@ -2,7 +2,6 @@
 <html>
   <head>
     <title>Image Merger</title>
-    <link rel="stylesheet" type="text/css" href="style.css">
     <script>
     function mergeImages() {
         // Get the selected file paths
@@ -29,23 +28,23 @@
 
         // Wait for all images to load
         img1.onload = function() {
-            // Calculate the total width and maximum height of all images
-            var width = img1.width + img2.width + img3.width + img4.width + 20;
-            var height = Math.max(img1.height, img2.height, img3.height, img4.height) + 10;
+            // Get the maximum width and height of the images
+            var maxWidth = Math.max(img1.width, img2.width, img3.width, img4.width);
+            var maxHeight = Math.max(img1.height, img2.height, img3.height, img4.height);
 
             // Set the width and height of the canvas
-            canvas.width = width;
-            canvas.height = height;
+            canvas.width = maxWidth * 2 + 15;
+            canvas.height = maxHeight * 2 + 15;
 
             // Draw a black background on the canvas
             ctx.fillStyle = "black";
-            ctx.fillRect(0, 0, width, height);
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
 
             // Draw the images on the canvas
             ctx.drawImage(img1, 5, 5);
-            ctx.drawImage(img2, img1.width + 10, 5);
-            ctx.drawImage(img3, img1.width + img2.width + 15, 5);
-            ctx.drawImage(img4, img1.width + img2.width + img3.width + 20, 5);
+            ctx.drawImage(img2, maxWidth + 10, 5);
+            ctx.drawImage(img3, 5, maxHeight + 10);
+            ctx.drawImage(img4, maxWidth + 10, maxHeight + 10);
 
             // Create a link to download the merged image
             var link = document.createElement("a");
