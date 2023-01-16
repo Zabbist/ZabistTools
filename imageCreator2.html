@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Image Merger</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script>
+    function mergeImages() {
+        var inputs = document.getElementById("inputs").files;
+        if (inputs.length !== 4) {
+            alert("Please select exactly 4 images.");
+            return;
+        }
+        // Create a canvas to merge the images
+        var canvas = document.createElement("canvas");
+        var ctx = canvas.getContext("2d");
+
+        // Create an image object for each input
+        var img1 = new Image();
+        var img2 = new Image();
+        var img3 = new Image();
+        var img4 = new Image();
+
+        // Set the source of each image object to the selected file path
+        img1.src = URL.createObjectURL(inputs[0]);
+        img2.src = URL.createObjectURL(inputs[1]);
+        img3.src = URL.createObjectURL(inputs[2]);
+        img4.src = URL.createObjectURL(inputs[3]);
+
+        // Wait for all images to load
+        img1.onload = function() {
+            // Get the maximum width and height of the images
+            var maxWidth = Math.max(img1.width, img2.width, img3.width, img4.width);
+            var maxHeight = Math.max(img1.height, img2.
+            height, img3.height, img4.height);
+
+            // Set the width and height of the canvas
+            canvas.width = maxWidth * 2;
+            canvas.height = maxHeight * 2;
+
+            // Draw the images on the canvas
+            ctx.drawImage(img1, 0, 0);
+            ctx.drawImage(img2, maxWidth, 0);
+            ctx.drawImage(img3, 0, maxHeight);
+            ctx.drawImage(img4, maxWidth, maxHeight);
+
+            // Create a link to download the merged image
+            var link = document.createElement("a");
+            link.download = "merged_image.jpg";
+            link.href = canvas.toDataURL();
+            link.click();
+        }
+    }
+    </script>
+  </head>
+  <body>
+    <h1>Image Merger</h1>
+    <input type="file" id="inputs" accept="image/*" multiple onchange="mergeImages()">
+  </body>
+</html>
