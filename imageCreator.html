@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Image Merger</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script>
+    function mergeImages() {
+        // Get the selected file paths
+        var input1 = document.getElementById("input1").files[0];
+        var input2 = document.getElementById("input2").files[0];
+        var input3 = document.getElementById("input3").files[0];
+        var input4 = document.getElementById("input4").files[0];
+
+        // Create a canvas to merge the images
+        var canvas = document.createElement("canvas");
+        var ctx = canvas.getContext("2d");
+
+        // Create an image object for each input
+        var img1 = new Image();
+        var img2 = new Image();
+        var img3 = new Image();
+        var img4 = new Image();
+
+        // Set the source of each image object to the selected file path
+        img1.src = URL.createObjectURL(input1);
+        img2.src = URL.createObjectURL(input2);
+        img3.src = URL.createObjectURL(input3);
+        img4.src = URL.createObjectURL(input4);
+
+        // Wait for all images to load
+        img1.onload = function() {
+            // Calculate the total width and maximum height of all images
+            var width = img1.width + img2.width + img3.width + img4.width + 20;
+            var height = Math.max(img1.height, img2.height, img3.height, img4.height) + 10;
+
+            // Set the width and height of the canvas
+            canvas.width = width;
+            canvas.height = height;
+
+            // Draw a black background on the canvas
+            ctx.fillStyle = "black";
+            ctx.fillRect(0, 0, width, height);
+
+            // Draw the images on the canvas
+            ctx.drawImage(img1, 5, 5);
+            ctx.drawImage(img2, img1.width + 10, 5);
+            ctx.drawImage(img3, img1.width + img2.width + 15, 5);
+            ctx.drawImage(img4, img1.width + img2.width + img3.width + 20, 5);
+
+            // Create a link to download the merged image
+            var link = document.createElement("a");
+            link.download = "merged_image.jpg";
+            link.href = canvas.toDataURL();
+            link.click();
+        }
+    }
+    </script>
+  </head>
+  <body>
+    <h1>Image Merger</h1>
+    <input type="file" id="input1" accept="image/*">
+    <br>
+    <input type="file" id="input2" accept="image/*">
+    <br>
+    <input type="file" id="input3" accept="image/*">
+    <br>
+    <input type="file" id="input4" accept="image/*">
+    <br>
+    <button onclick="mergeImages()">Merge Images</button>
+ 
