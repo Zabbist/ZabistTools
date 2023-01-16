@@ -200,11 +200,6 @@ button {
    grid-gap: 10px;
    justify-content: center; /* Center the grid horizontally */
    align-content: center; /* Center the grid vertically */
-}
-#image-matrix img {
-   width: 100%;
-   height: 100%;
-}
 
 #image-matrix img {
     width: 100%;
