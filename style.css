@@ -191,4 +191,12 @@ button {
   width: 150px;
 }
 
+.image-matrix {
+    display: flex;
+    flex-wrap: wrap;
+ }
+.image-matrix img {
+    margin: 5px;
+ }
+
 
