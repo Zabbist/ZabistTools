@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Image Matrix</title>
+  <style>
+    /* Add styles for image matrix */
+    .image-matrix {
+      display: flex;
+      flex-wrap: wrap;
+    }
+    .image-matrix img {
+      margin: 5px;
+    }
+  </style>
+</head>
+<body>
+  <input type="file" id="image-input" onchange="displayMatrix()">
+  <button onclick="displayMatrix()">Display Matrix</button>
+  <div id="image-matrix"></div>
+  <script>
+    function displayMatrix() {
+      // Get selected image file
+      const imageInput = document.getElementById("image-input");
+      const imageFile = imageInput.files[0];
+      
+      // Create an image element for each cell in the matrix
+      const matrix = document.getElementById("image-matrix");
+      matrix.innerHTML = "";
+      for (let i = 0; i < 9; i++) {
+        const image = document.createElement("img");
+        image.src = URL.createObjectURL(imageFile);
+        matrix.appendChild(image);
+      }
+    }
+    
+  </script>
+  <a href="index.html">Main Page</a>
+</body>
+</html>
