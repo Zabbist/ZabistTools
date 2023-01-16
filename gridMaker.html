@@ -10,8 +10,10 @@
       display: grid;
       grid-template-columns: repeat(3, 173px);
       grid-template-rows: repeat(3, 260px);
-      grid-gap: 10px;
-      background-color: black; /* Add background color to the gap */
+      grid-column-gap: 20px;
+      grid-row-gap: 20px;
+      grid-column-gap: black;
+      grid-row-gap: black;
       justify-content: center; /* Center the grid horizontally */
       align-content: center; /* Center the grid vertically */
     }
@@ -25,7 +27,7 @@
 </head>
 <body>
   <input type="file" id="image-input" onchange="displayMatrix()">
-  <button onclick="displayMatrix()">Display Matrix</button>
+  <button onclick="displayMatrix()">Display Matrix</button><br>
   <div id="image-matrix"></div>
   <script>
     function displayMatrix() {
