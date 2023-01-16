@@ -2,14 +2,14 @@
 <html>
   <head>
     <title>Image Merger</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
     <script>
     function mergeImages() {
-        // Get the selected file paths
-        var input1 = document.getElementById("input1").files[0];
-        var input2 = document.getElementById("input2").files[0];
-        var input3 = document.getElementById("input3").files[0];
-        var input4 = document.getElementById("input4").files[0];
-
+        var inputs = document.getElementById("inputs").files;
+        if (inputs.length !== 4) {
+            alert("Please select exactly 4 images.");
+            return;
+        }
         // Create a canvas to merge the images
         var canvas = document.createElement("canvas");
         var ctx = canvas.getContext("2d");
@@ -21,10 +21,10 @@
         var img4 = new Image();
 
         // Set the source of each image object to the selected file path
-        img1.src = URL.createObjectURL(input1);
-        img2.src = URL.createObjectURL(input2);
-        img3.src = URL.createObjectURL(input3);
-        img4.src = URL.createObjectURL(input4);
+        img1.src = URL.createObjectURL(inputs[0]);
+        img2.src = URL.createObjectURL(inputs[1]);
+        img3.src = URL.createObjectURL(inputs[2]);
+        img4.src = URL.createObjectURL(inputs[3]);
 
         // Wait for all images to load
         img1.onload = function() {
@@ -57,14 +57,6 @@
   </head>
   <body>
     <h1>Image Merger</h1>
-    <input type="file" id="input1" accept="image/*">
-    <br>
-    <input type="file" id="input2" accept="image/*">
-    <br>
-    <input type="file" id="input3" accept="image/*">
-    <br>
-    <input type="file" id="input4" accept="image/*">
-    <br>
-    <button onclick="mergeImages()">Merge Images</button>
+    <input type="file" id="inputs" accept="image/*" multiple onchange="mergeImages()">
   </body>
-</html>
+</html
