@@ -195,9 +195,9 @@ button {
 
 #image-matrix {
    display: grid;
-   grid-template-columns: repeat(3, 260px);
-   grid-template-rows: repeat(3, 390px);
-   grid-gap: 20px;
+   grid-template-columns: repeat(10, 260px);
+   grid-template-rows: repeat(10, 390px);
+   grid-gap: 10px;
    justify-content: center; /* Center the grid horizontally */
    align-content: center; /* Center the grid vertically */
 }
