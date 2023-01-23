@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Negative Prompt Generator</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <script src="negative.js"></script>
+</head>
+<body>
+  <h1>SD Drawing Prompts </h1>
+  <br>
+  <button type="button" onclick="copyDrawStyle()">Copy Draw Style</button>
+  <br>
+  <button onclick="copyNegative()">Copy Negtive</button>
+  <br>
+  <button onclick="copyFinalStyle()">Copy Final Style</button>
+  <script>
+  
+    function copyDrawStyle() {
+      // Copy the draw style value to the clipboard
+      navigator.clipboard.writeText("by artstation, ghibli, Artgerm, Ross Tran");
+    }
+    function copyNegative() {
+      // Copy the draw style value to the clipboard
+      navigator.clipboard.writeText("ugly, tiling, out of frame, extra limbs, disfigured, deformed, body out of frame, bad anatomy, cut off,duplicate, kitsch");
+    }
+    function copyFinalStyle() {
+      // Copy the draw style value to the clipboard
+      navigator.clipboard.writeText("global illumination, sharp focus, studio photo, intricate details, highly detailed, artstation, sharp focus, studio photo, , perfect composition, beautiful detailed, octane render, 8k artistic photography, photorealistic, concept art, soft natural volumetric, cinematic perfect light, chiaroscuro, award - winning photograph, oil on canvas, luis ricardo falero,WLOP, Artgerm, trending on artstation, masterpiece, raphael, caravaggio, greg rutkowski, beeple, beksinski, giger");
+    }
+    
+  </script>
+  <a href="index.html">Main Page</a>
+</body>
+</html>
