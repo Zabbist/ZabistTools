@@ -57,13 +57,32 @@
         justify-content: center;
         margin-top: 25px;
       }
+      /* Center the label */
+      #numArtists-label {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 25px;
+        color: #92f9ea;
+        font-family: "EXO 2", sans-serif;
+      }
+      #artists {
+        display: inline-block;
+        white-space: nowrap;
+      }
+
+      #artists li {
+        display: inline-block;
+      }
+
     </style>
   </head>
   <body>
+    
     <div class="logo">
       <img src="logo2.png" alt="Logo">
     </div>
-
+    <label id="numArtists-label">Choose the number of artists to add to the prompt</label>
     <div class="radio-group">
       <label>
         <input type="radio" name="numOfArtists" value="2">
@@ -83,35 +102,28 @@
       </label>
     </div>
 
-    <div class="radio-group">
-      <label>
-        <input type="radio" name="themeStyle" value="Fantasy">
-        Fantasy
-      </label>
-      <label>
-        <input type="radio" name="themeStyle" value="Sci Fi">
-        Sci Fi
-      </label>
-    </div>
+  
 
     <button id="generate-btn">Generate Random Style</button>
 
     <script>
-      var artists = ["Adrian Ghenie", "Esao Andrews", "Jenny Saville", "Edward Hopper", "James Jean"];
-      var scifiChoice = "sci-fi, futuristic, utopian, body parts, particles";
+      var artists = ["David Marquez , Shelby Robertson, Tara McPherson, Travis Charest, Adam Hughes, Luis Royo, \
+                     Julie Bell, Sakimichan, Marc Silvestri, Stjepan Sejic, Atsuo Ueda, J. Scott Campbell, Chrissie Zullo, \
+                     JC Leyendecker, Anders Zorn, Sandro Botticelli, John Singer Sargent,Takehiko Inoue, adrian ghenie, esao andrews, \
+                     jenny saville, edward hopper, james jean, takato yamamoto, Gustave Dore, Albrecht Durer, Loish, Rhads, Beeple, \
+                     Makoto Shinkai, Lois van Baarle, Ilya Kuvshinov, Rossdraws, Tom Bagshaw, Alphonse Mucha, Greg Rutkowski, Beksinski, \
+                     Giger, Woolitize, Ayami Kojima, Karol Bak, Greg Hildebrandt, Mark Brooks, Artgerm, H. R. Giger, Alberto Seveso, Michael Whelan, \
+                     Greg Rutkowski and Alphonse Mucha, Laurie Greasley, Studio Ghibli, Akira Toriyama, James Gilleard, Genshin Impact, and Devinart, \
+                     rtgem, Charlie Bowater, Anne Bachelier, Agnes Cecile, Margaret Keane, Rolf Armstrong, Simon Stalenhag, Wayne Barlowe,\
+                     Igor Kieryluk, Gustav Klimt, Ed Fairburn, Craig Mullins, Ruan Jia, Kentaro Miura, Loundraw"];
+      
 
       document.getElementById("generate-btn").addEventListener("click", function() {
         var numOfArtists = document.querySelector('input[name="numOfArtists"]:checked').value;
-        var themeStyle = document.querySelector('input[name="themeStyle"]:checked').value;
+        
         var clipboardString = "";
 
-        if (themeStyle === "Fantasy") {
-          clipboardString += fantasyWords[Math.floor(Math.random() * fantasyWords.length)];
-        } else {
-          clipboardString += scifiChoice;
-        }
-
-        clipboardString += " ";
+        //clipboardString += " ";
 
         for (var i = 0; i < numOfArtists; i++) {
           var randomArtistIndex = Math.floor(Math.random() * artists.length);
