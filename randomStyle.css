@@ -1,55 +1,72 @@
-   /* Style all buttons */
+/* Style all buttons */
 button {
-    background-color: #ed3f11;
-    color: #fff;
-    border: none;
-    padding: 10px 20px;
-    font-size: 16px;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background-color 0.3s ease-in-out;
+  background-color: #ed3f11;
+  color: #fff;
+  border: none;
+  justify-content: center;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+  display: block;
+  margin: 0 auto;
 }
   
 /* Change button style on hover */
 button:hover {
-    background-color: #c42700;
-
-button,
-input[type="radio"] {
-  background-color: #ed3f11;
-  color: #fff;
-  font-family: 'EXO 2', arial;
-  font-size: 16px;
-  padding: 10px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
+  background-color: #c42700;
 }
 
-input[type="radio"] {
-  margin: 0 25px;
-}
-
-input[type="radio"]:checked+label {
-  background-color: #ed3f11;
-  color: #92f9ea;
-}
-      
- /* Center the logo */
+/* Center the logo */
 .logo {
-    display: flex;
-    justify-content: center;
-    margin-top: 25px;
+  display: flex;
+  justify-content: center;
+  margin-top: 25px;
 }
-   
+
+/* Set the background color */
+body {
+  background-color: #19191e;
+}
+
 label {
   color: #92f9ea;
   font-family: 'EXO 2', arial;
 }
 
-/* Set the background color */
-body {
-    background-color: #19191e;
+/* Center the radio buttons and labels */
+.radio-group {
+  display: flex;
+  justify-content: center;
+  margin-top: 25px;
 }
-      
-      
+
+.radio-group label {
+  margin: 0 25px;
+}
+
+/* Center the button */
+#generate-btn {
+  display: flex;
+  justify-content: center;
+  margin-top: 25px;
+}
+/* Center the label */
+#numArtists-label {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 25px;
+  color: #92f9ea;
+  font-family: "EXO 2", sans-serif;
+}
+/* Center the label */
+#info-label {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 15px;
+  color: #92f9ea;
+  font-family: "EXO 2", sans-serif;
+}
