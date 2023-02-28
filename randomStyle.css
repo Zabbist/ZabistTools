@@ -12,7 +12,11 @@ button {
   display: block;
   margin: 0 auto;
 }
-  
+/*button pressed */
+button:active {
+  transform: translateY(2px);
+}
+ 
 /* Change button style on hover */
 button:hover {
   background-color: #c42700;
