@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Logo in the center</title>
+    <style>
+      /* Center the logo */
+      .logo {
+        display: flex;
+        justify-content: center;
+        margin-top: 25px;
+      }
+      
+      /* Set the background color */
+      body {
+        background-color: #19191e;
+      }
+
+      /* Center the radio buttons and labels */
+      .radio-group {
+        display: flex;
+        justify-content: center;
+        margin-top: 25px;
+      }
+
+      .radio-group label {
+        margin: 0 25px;
+      }
+
+      /* Center the button */
+      #generate-btn {
+        display: flex;
+        justify-content: center;
+        margin-top: 25px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="logo">
+      <img src="path/to/your/image/logo.png" alt="Logo">
+    </div>
+
+    <div class="radio-group">
+      <label>
+        <input type="radio" name="numOfArtists" value="2">
+        2
+      </label>
+      <label>
+        <input type="radio" name="numOfArtists" value="3">
+        3
+      </label>
+      <label>
+        <input type="radio" name="numOfArtists" value="4">
+        4
+      </label>
+      <label>
+        <input type="radio" name="numOfArtists" value="5">
+        5
+      </label>
+    </div>
+
+    <div class="radio-group">
+      <label>
+        <input type="radio" name="themeStyle" value="Fantasy">
+        Fantasy
+      </label>
+      <label>
+        <input type="radio" name="themeStyle" value="Sci Fi">
+        Sci Fi
+      </label>
+    </div>
+
+    <button id="generate-btn">Generate Random Style</button>
+
+    <script>
+      var artists = ["Adrian Ghenie", "Esao Andrews", "Jenny Saville", "Edward Hopper", "James Jean"];
+      var scifiChoice = "sci-fi, futuristic, utopian, body parts, particles";
+
+      document.getElementById("generate-btn").addEventListener("click", function() {
+        var numOfArtists = document.querySelector('input[name="numOfArtists"]:checked').value;
+        var themeStyle = document.querySelector('input[name="themeStyle"]:checked').value;
+        var clipboardString = "";
+
+        if (themeStyle === "Fantasy") {
+          clipboardString += fantasyWords[Math.floor(Math.random() * fantasyWords.length)];
+        } else {
+          clipboardString += scifiChoice;
+        }
+
+        clipboardString += " ";
+
+        for (var i = 0; i < numOfArtists; i++) {
+          var randomArtistIndex = Math.floor(Math.random() * artists.length);
+          clipboardString += artists[randomArtistIndex];
+
+          if (i < numOfArtists - 1) {
+            clipboardString += ", ";
+          }
+        }
+
+        navigator.clipboard.writeText(clipboardString);
+      });
+    </script>
+  </body>
+</html>
