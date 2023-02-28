@@ -1,0 +1,46 @@
+  /* Style all buttons */
+button {
+    background-color: #ed3f11;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+  
+/* Change button style on hover */
+button:hover {
+    background-color: #c42700;
+/* Style radio buttons */
+input[type=radio] {
+    appearance: none;
+    -webkit-appearance: none;
+    background-color: #fff;
+    border: 1px solid #ed3f11;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+    cursor: pointer;
+}
+  
+/* Change radio button style when selected */
+input[type=radio]:checked {
+    background-color: #ed3f11;
+}
+  
+/* Style radio button labels */
+label {
+    color: #fff;
+    font-size: 16px;
+}
+      
+ /* Center the logo */
+.logo {
+    display: flex;
+    justify-content: center;
+    margin-top: 25px;
+}
+      
