@@ -1,4 +1,4 @@
-  /* Style all buttons */
+   /* Style all buttons */
 button {
     background-color: #ed3f11;
     color: #fff;
@@ -43,4 +43,10 @@ label {
     justify-content: center;
     margin-top: 25px;
 }
+
+/* Set the background color */
+body {
+    background-color: #19191e;
+}
+      
       
