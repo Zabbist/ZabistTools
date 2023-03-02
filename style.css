@@ -112,30 +112,6 @@ input[type="file"] {
   margin-bottom: 10px;
 }
 
-input[type="file"] {
-  /* Hide the original file input element */
-  display: inline-flex;
-  padding: 1em 1em;
-  border: 1px solid #ccc;
-  border-radius: 3px;
-  background-color: #fff;
-  color: #333;
-  cursor: pointer;
-  font-size: 1em;
-}
-
-/* Style a custom file input element */
-.custom-file-input {
-  display: inline-block;
-  padding: 0.5em 1em;
-  border: 1px solid #ccc;
-  border-radius: 3px;
-  background-color: #4285f4;
-  color: #333;
-  cursor: pointer;
-  font-size: 1em;
-}
-
 /* Style the custom file input element when it's focused */
 .custom-file-input:focus {
   outline: none;
