@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Minhas Prompts</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <script src="negative.js"></script>
+</head>
+<body>
+  <h1>SD Drawing Prompts </h1>
+  <br>
+  <button type="button" onclick="copyDrawFaces()">Drawing Style</button>
+  <br>
+  <button type="button" onclick="copyDrawObjects()">First Variations</button>
+  <br>
+  <button onclick="copyNegative()">Copy Negative</button>
+  <br>
+  <button onclick="copyFinalStyle()">Photorealistic Style</button>
+  <script>
+  
+    function copyDrawFaces() {
+      // Copy the draw style value to the clipboard
+      navigator.clipboard.writeText("perfect digital art, closeup, colorful, highly detailed, dynamic, cinematic, professional, vivid color, animated, background maze, background highly detailed 3d, sf, intricate artwork masterpiece, ominous, matte painting movie poster, golden ratio, trending on cgsociety, intricate, epic, trending on artstation, by artgerm, wlop and beksinski, highly detailed, vibrant, production cinematic character render, ultra high quality model");
+    }
+    function copyDrawObjects() {
+      // Copy the draw style value to the clipboard
+      navigator.clipboard.writeText("concept art, by artgerm and greg rutkowski, intricate, elegant, highly detailed digital painting, smooth, sharp focus, illustration, in the style of simon stalenhag, wayne barlowe, and igor kieryluk, unreal engine,  beeple, makoto shinkai, lois van baarle, ilya kuvshinov, ross tran, tom bagshaw, alphonse mucha, global illumination, detailed and intricate environment");
+    }
+    function copyNegative() {
+      // Copy the draw style value to the clipboard
+      navigator.clipboard.writeText("mutilated, disgusting, mutated, blurry, blur, poorly drawn, Deformed, disconnected limbs, poorly drawn hands, low-res, missing limb, kitsch, surreal, blurry, bad anatomy, malformed hands, old, ugly, poorly drawn face, mangled, oversaturated, disfigured, kitsch, ugly, oversaturated, greain, low-res, Deformed, blurry, bad anatomy, disfigured, poorly drawn face, mutation, mutated, extra limb, ugly, poorly drawn hands, missing limb, blurry, floating limbs, disconnected limbs, malformed hands");
+    }
+    function copyFinalStyle() {
+      // Copy the draw style value to the clipboard
+      navigator.clipboard.writeText("exquisite details, 100 megapixel, Hasselblad X2D 100C camera, 80mm lens, ultra sharp focus, f/5.6 ISO 100, shutter speed 1/125, intricately detailed, octane render, dark render, unreal engine, global illumination, volumetric lighting, warm lighting, ray tracing, rich colours, National Geographic photograph, Time magazine award winning photograph, low contrast, highly detailed photograph, oil painting, heavy strokes, paint dripping");
+    }
+    
+  </script>
+  <a href="index.html">Main Page</a>
+</body>
+</html>
