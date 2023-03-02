@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>ZabistAI Style Tool</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <script src="negative.js"></script>
+</head>
+<body>
+  <div class="logo">
+    <img src="logo2.png" alt="Logo">
+  </div>
+  <br>
+  <br>
+  <h1 style="color: #92f9ea; text-align: center; font-family: 'EXO 2', arial;">ZabistAI Style Tool</h1>
+  <br>
+  <button type="button" onclick="copyDrawFaces()">Drawing Style</button>
+  <br>
+  <button type="button" onclick="copyDrawObjects()">First Variations</button>
+  <br>
+  <button onclick="copyNegative()">Negative Prompt</button>
+  <br>
+  <button onclick="copyFinalStyle()">Photo Style</button>
+  <script>
+  
+    function copyDrawFaces() {
+      // Copy the draw style value to the clipboard
+      navigator.clipboard.writeText("perfect digital art, model");
+    }
+    function copyDrawObjects() {
+      // Copy the draw style value to the clipboard
+      navigator.clipboard.writeText("concept art, intricate environment");
+    }
+    function copyNegative() {
+      // Copy the draw style value to the clipboard
+      navigator.clipboard.writeText("mutilated, s");
+    }
+    function copyFinalStyle() {
+      // Copy the draw style value to the clipboard
+      navigator.clipboard.writeText("exqy strokes, paint dripping");
+    }
+    
+  </script>
+
+</body>
+</html>
