@@ -29,10 +29,6 @@ body {
   background-color: #f1f1f1;
 }
 
-h1 {
-  text-align: center;
-  margin: 20px 0;
-}
 
 form {
   width: 80%;
@@ -206,6 +202,7 @@ button {
    grid-gap: 10px;
    justify-content: center; /* Center the grid horizontally */
    align-content: center; /* Center the grid vertically */
+}
 
 #image-matrix img {
     width: 100%;
