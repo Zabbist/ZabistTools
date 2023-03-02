@@ -44,6 +44,17 @@ body {
 label {
   color: #92f9ea;
   font-family: 'EXO 2', arial;
+  height: 30px;
+}
+
+#title-label {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 15px;
+  color: #92f9ea;
+  font-family: "EXO 2", sans-serif;
+  height: 30px;
 }
 
 /* Center the radio buttons and labels */
