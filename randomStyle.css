@@ -1,7 +1,4 @@
-#my-h1 {
-  text-align: center;
-  color: #92f9ea;
-}
+
 
 /* Style all buttons */
 button {
@@ -45,6 +42,7 @@ label {
   color: #92f9ea;
   font-family: 'EXO 2', arial;
   height: 60px;
+  
 }
 
 
