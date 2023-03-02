@@ -2,6 +2,7 @@
 
 /* Style all buttons */
 button {
+  width: 150px;
   background-color: #ed3f11;
   color: #fff;
   border: none;
