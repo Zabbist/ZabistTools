@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Image Resizing App</title>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/fabric.js/4.6.0/fabric.min.js" integrity="sha512-7Sl8wpvEcvJmn3jyX9ahMubWcqwvQRs4lOs0w4I4lSBF8ESvY0C0GyTjT2ZhLoLnEemRHf+yBAhZwGtZQmquzQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+	<style>
+		canvas {
+			border: 1px solid black;
+		}
+	</style>
+</head>
+<body>
+	<h1>Image Resizing App</h1>
+	<p>Select an image to upload:</p>
+	<input type="file" id="imageUpload">
+	<br>
+	<canvas id="canvas" width="500" height="500"></canvas>
+
+	<script>
+		// Initialize canvas
+		var canvas = new fabric.Canvas('canvas');
+
+		// Handle image upload
+		var imageUpload = document.getElementById('imageUpload');
+		imageUpload.addEventListener('change', handleImageUpload);
+
+		function handleImageUpload(event) {
+			var file = event.target.files[0];
+			var reader = new FileReader();
+			reader.onload = function(event) {
+				var img = new Image();
+				img.onload = function() {
+					var fabricImg = new fabric.Image(img);
+					var scale = Math.min(
+						canvas.width / fabricImg.width,
+						canvas.height / fabricImg.height
+					);
+					fabricImg.scale(scale);
+					canvas.setBackgroundImage(fabricImg, canvas.renderAll.bind(canvas));
+				};
+				img.src = reader.result;
+			};
+			reader.readAsDataURL(file);
+		}
+	</script>
+</body>
+</html>
