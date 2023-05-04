@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Image Editor</title>
+    <style>
+        #canvas {
+            box-shadow: 0 0 5px 1px black;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="canvas" width="640" height="480"></canvas>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fabric.js/4.6.0/fabric.min.js"></script>
+    <script>
+        var imgURL = 'http://i.imgur.com/8rmMZI3.jpg';
+
+        var canvas = new fabric.Canvas('canvas');
+
+        var pugImg = new Image();
+        pugImg.onload = function (img) {    
+            var pug = new fabric.Image(pugImg, {
+                angle: 45,
+                width: 500,
+                height: 500,
+                left: 50,
+                top: 70,
+                scaleX: .25,
+                scaleY: .25
+            });
+            canvas.add(pug);
+        };
+        pugImg.src = imgURL;
+    </script>
+</body>
+</html>
